@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precision</title>
+    <link rel="icon" href="img/logo/Screenshot 2025-09-24 103228.png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    .service-hero-content h2 span.letter,
+    .service-hero-content h1 span.letter {
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: fadeInUp 0.6s ease-out forwards;
+      display: inline-block;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .service-hero {
+      background-image: url(img/TaeApril20.jpg);
+      background-size: cover;
+      background-position: center;
+      padding: 100px 30px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      text-align: left;
+    }
+
+    .service-hero-content {
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-hero-content h2 {
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    .service-hero-content h2 span {
+      font-weight: 700;
+      color: #00a2ff;
+    }
+
+    .bg-text {
+      font-size: 100px;
+      font-weight: 700;
+
+      margin: 0;
+      line-height: 1;
+      bottom: 30px;
+      left: 30px;
+      color: #021b5d;
+    }
+
+    /* Add this to your style block or style.css */
+
+    /* Fade-left animation for service-hero section */
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .service-hero {
+      opacity: 0;
+      transform: translateX(-40px);
+      animation: none;
+    }
+
+    /* Fade-up animation for service section */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .services {
+      opacity: 0;
+      transform: translateY(32px);
+      animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      animation-delay: 1.8s;
+    }
+
+    /* Fade-up animation for service section */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .services {
+      opacity: 0;
+      transform: translateY(32px);
+      animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+      animation-delay: 0.2s;
+    }
+  </style>
+  <body>
+ <header class="navbar">
+      <div class="logo">
+        <img src="img/logo/Screenshot 2025-09-24 103609.png" alt="" />
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="precision.html">Precision</a>
+        <a href="Project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details?" class="btn-yellow">Enquiry ➜</a>
+      </nav>
+    </header>
+
+
+    <section class="service-hero" id="services">
+      <div class="service-hero-content">
+        <h2>We provide <br /><span>Best Quality</span></h2>
+        <h1 class="bg-text">Precision</h1>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>Custom CNC Manufacturing Solutions</h2>
+      <p>
+        From prototyping to large-scale production, Genius Tech delivers
+        end-to-end CNC machining and manufacturing services tailored to industry
+        needs.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="img/abt/CNC-Machine.jpg" alt="CNC Machining" />
+          <h3>CNC Milling</h3>
+          <p>
+            High-precision machining of complex components in metals and
+            engineering plastics with tight tolerances.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+
+        <div class="card">
+          <img
+            src="img/abt/istockphoto-154368811-612x612.jpg"
+            alt="VMC Milling"
+          />
+          <h3>VMC Milling</h3>
+          <p>
+            Advanced Vertical Machining Centers for moulds, dies, tools, and
+            production-grade components.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+
+        <div class="card">
+          <img
+            src="img/close-up-scene-progressive-die-operation-metal-work-processing-stamping-die-close-up-scene-progressive-die-operation-215348292.webp"
+            alt="Tool & Die Making"
+          />
+          <h3>Press Tool & Die Making</h3>
+          <p>
+            Custom tooling solutions including press tools, jigs, and fixtures
+            built with durability and accuracy.
+          </p>
+          <a href="#">Learn More →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-details">
+      <div class="section-header">
+        <span class="tag">Manufacturing</span>
+        <h2>The Most Popular <span>Components</span> We Produce</h2>
+      </div>
+
+      <div class="details-grid">
+        <!-- Card 1 -->
+        <div class="detail-card">
+          <img
+            src="img/mild-steel-cast-iron-welding-silver-colour-size-customized-hardness-70-hrc-application-industrial-jig-fixture-947.jpg"
+            alt="Precision Fixture"
+          />
+          <h3>Precision Fixtures</h3>
+          <ul>
+            <li><strong>Material:</strong> Alloy Steel, Tool Steel</li>
+            <li><strong>Tolerance:</strong> ±0.01 mm</li>
+            <li><strong>Application:</strong> Workholding & Assembly</li>
+            <li><strong>Finish:</strong> Heat Treated / Ground</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="detail-card">
+          <img src="img/Industrial-Mould-Bore-Plates.jpg" alt="Base Plate" />
+          <h3>Machine Base Plates</h3>
+          <ul>
+            <li><strong>Material:</strong> Cast Iron / Mild Steel</li>
+            <li><strong>Size Range:</strong> 200 mm – 2000 mm</li>
+            <li><strong>Surface Finish:</strong> Milled / Ground</li>
+            <li><strong>Mounting:</strong> Standard / Customized</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="detail-card">
+          <img src="img/Picture1.png" alt="Tool Holder" />
+          <h3>Tool Holders</h3>
+          <ul>
+            <li><strong>Type:</strong> BT, CAT, HSK</li>
+            <li><strong>Material:</strong> Alloy Steel</li>
+            <li><strong>Clamping:</strong> Hydraulic / Mechanical</li>
+            <li><strong>Accuracy:</strong> 5 μm Runout</li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="detail-card">
+          <img src="img/Picture2.png" alt="Shaft Component" />
+          <h3>Custom Shafts</h3>
+          <ul>
+            <li><strong>Material:</strong> Stainless Steel, Alloy Steel</li>
+            <li><strong>Diameter:</strong> 10–150 mm</li>
+            <li><strong>Length:</strong> Up to 1200 mm</li>
+            <li><strong>Finish:</strong> Polished / Ground</li>
+          </ul>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="detail-card">
+          <img src="img/Picture5.png" alt="Bearing Housing" />
+          <h3>Bearing Housings</h3>
+          <ul>
+            <li><strong>Material:</strong> Cast Iron, Aluminum</li>
+            <li><strong>Size Range:</strong> 20–150 mm Bore</li>
+            <li><strong>Application:</strong> Industrial Machinery</li>
+            <li><strong>Finish:</strong> CNC Machined</li>
+          </ul>
+        </div>
+
+        <!-- Upload Card -->
+        <div class="upload-card">
+          <div class="upload-box">
+            <h3>Upload Your CAD / 3D Design</h3>
+            <p>
+              Supported Formats:<br />
+              STEP / IGES / STL / DXF / FBX
+            </p>
+            <a href="#" class="btn-primary">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Column -->
+        <div class="footer-brand">
+          <img
+            src="img/logo/Screenshot 2025-09-24 103609.png"
+            alt="Genius Tech Logo"
+            class="logo"
+          />
+          <p>
+            Genius Technology specializes in high-precision VMC milling, and
+            press tool and Mold solutions. Delivering innovation, accuracy, and
+            reliability for global manufacturing industries.
+          </p>
+        </div>
+
+        <!-- Quick Menu -->
+        <div class="footer-links">
+          <h4>Quick Menu</h4>
+          <ul>
+            <li><a href="services.html">Vmc & Wirecut Molding</a></li>
+            <li><a href="precision.html">Press & Moldtools Making </a></li>
+            <li><a href="precision.html">Tool Room Activities</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">FAQs</a></li>
+            <li><a href="contact.html">Quality Policy</a></li>
+            <li><a href="contact.html">Certifications</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://in.linkedin.com/in/abdul-lashkari-8798a7129?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
+              title="LinkedIn target="
+              _blank
+              rel="noopener"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/share/1JmvB4UV7W/"
+              title="Facebook  target="
+              _blank
+              rel="noopener    "
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/genius.technology_?igsh=MTd4c3Y5YzJkZmF1Mg=="
+              title="Instagram target="
+              _blank
+              rel="noopener"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details? target="
+              _blank
+              rel="noopener"
+              title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+         <p>
+            <a
+              href="https://www.google.com/maps/place/genius+technologies/@13.0064202,77.4947271,808m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae3d001422d6f5:0x357eb3ad3a09bf37!8m2!3d13.006415!4d77.497302!16s%2Fg%2F11y013t21p?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+              Genius-technology 195, Andrahalli Main Rd, Peenya 2nd Stage, Shushruti Nagar, Bengaluru, Karnataka 560091
+            </a>
+          </p>
+          <p>
+            <a href="tel:+81236 38613">
+              <i class="fas fa-phone-alt"></i> +91 +91 81236 38613
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@genius-technology.co.in&su=Product%20Enquiry%20from%20Website&body=Hello%20Genius%20Tech%2C%0A%0AI%20am%20interested%20in%20your%20products.%20Please%20share%20more%20details%20with%20me.%0A%0ARegards%2C%0A[Your%20Name] "
+              rel="noopener"
+              target="_blank"
+            >
+              <i class="fas fa-envelope"></i> admin@genius-technology.co.in
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Copyright 2025. Genius Tech CNC. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Service Hero h2 animation
+        const serviceHeroH2 = document.querySelector(
+          ".service-hero-content h2"
+        );
+        if (serviceHeroH2) {
+          // Split text into spans if not already done
+          if (!serviceHeroH2.querySelector("span.letter")) {
+            const html = serviceHeroH2.innerHTML;
+            // Split by <br> and animate each line
+            serviceHeroH2.innerHTML = "";
+            html.split("<br>").forEach((line, lineIdx) => {
+              if (lineIdx > 0)
+                serviceHeroH2.appendChild(document.createElement("br"));
+              line
+                .replace(/<[^>]+>/g, "")
+                .split("")
+                .forEach((char, i) => {
+                  const span = document.createElement("span");
+                  span.className = "letter";
+                  span.textContent = char === " " ? "\u00A0" : char;
+                  serviceHeroH2.appendChild(span);
+                });
+            });
+          }
+          serviceHeroH2.querySelectorAll("span.letter").forEach((span) => {
+            span.style.opacity = 0;
+            span.style.transform = "translateY(-30px)";
+            span.style.animation = "none";
+          });
+          const observerH2 = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                serviceHeroH2
+                  .querySelectorAll("span.letter")
+                  .forEach((span, i) => {
+                    span.style.animation = "fadeInUp 0.6s ease-out forwards";
+                    span.style.animationDelay = i * 0.06 + "s";
+                  });
+              }
+            },
+            { threshold: 0.5 }
+          );
+          observerH2.observe(serviceHeroH2);
+        }
+
+        // Service Hero h1 animation
+        const serviceHeroH1 = document.querySelector(
+          ".service-hero-content h1"
+        );
+        if (serviceHeroH1) {
+          if (!serviceHeroH1.querySelector("span.letter")) {
+            const text = serviceHeroH1.textContent;
+            serviceHeroH1.innerHTML = "";
+            text.split("").forEach((char) => {
+              const span = document.createElement("span");
+              span.className = "letter";
+              span.textContent = char === " " ? "\u00A0" : char;
+              serviceHeroH1.appendChild(span);
+            });
+          }
+          serviceHeroH1.querySelectorAll("span.letter").forEach((span) => {
+            span.style.opacity = 0;
+            span.style.transform = "translateY(-30px)";
+            span.style.animation = "none";
+          });
+          const observerH1 = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                serviceHeroH1
+                  .querySelectorAll("span.letter")
+                  .forEach((span, i) => {
+                    span.style.animation = "fadeInUp 0.6s ease-out forwards";
+                    span.style.animationDelay = i * 0.06 + "s";
+                  });
+              }
+            },
+            { threshold: 0.5 }
+          );
+          observerH1.observe(serviceHeroH1);
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        menuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const servicesSection = document.querySelector(".services");
+        if (!servicesSection) return;
+        servicesSection.style.opacity = 0;
+        servicesSection.style.transform = "translateY(32px)";
+        const observer = new IntersectionObserver(
+          function (entries) {
+            if (entries[0].isIntersecting) {
+              servicesSection.style.animation =
+                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
+              servicesSection.style.animationDelay = "0.2s";
+              observer.disconnect();
+            }
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(servicesSection);
+      });
+
+      // Fade-left animation for service-hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        const serviceHero = document.querySelector(".service-hero");
+        if (!serviceHero) return;
+        serviceHero.style.opacity = 0;
+        serviceHero.style.transform = "translateX(-40px)";
+        const observer = new IntersectionObserver(
+          function (entries) {
+            if (entries[0].isIntersecting) {
+              serviceHero.style.animation =
+                "fadeLeft 0.8s cubic-bezier(.2,.9,.2,1) forwards";
+              serviceHero.style.animationDelay = "0.2s";
+              observer.disconnect();
+            }
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(serviceHero);
+      });
+
+      // Fade-up animation for popular-details section
+      document.addEventListener("DOMContentLoaded", function () {
+        const popularDetails = document.querySelector(".popular-details");
+        if (!popularDetails) return;
+        popularDetails.style.opacity = 0;
+        popularDetails.style.transform = "translateY(32px)";
+        const observer = new IntersectionObserver(
+          function (entries) {
+            if (entries[0].isIntersecting) {
+              popularDetails.style.animation =
+                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
+              popularDetails.style.animationDelay = "0.2s";
+              observer.disconnect();
+            }
+          },
+          { threshold: 0.3 }
+        );
+        observer.observe(popularDetails);
+      });
+    </script>
+  </body>
+</html>

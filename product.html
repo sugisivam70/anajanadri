@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cold Preparations & Juice Maker</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+    
+           background: linear-gradient( to right , #f8f9fc, #b8e1ff);
+       
+      }
+
+      .navbar {
+ 
+      background: linear-gradient( to right , #f8f9fc, #b8e1ff);
+ 
+}
+
+      .product-grid {
+    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.product-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.product-card h4 {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pagination span {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background: #007bff;
+  color: #fefefe;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pagination .active,
+.pagination span:hover {
+  background: #838383;
+  color: #fff;
+}
+
+
+.product-img-slider {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-img-slider img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  left: 0; top: 0;
+  transition: opacity 0.4s;
+}
+.product-img-slider img.active {
+  display: block;
+  position: relative;
+  opacity: 1;
+}
+.product-img-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.2em 0.6em;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0.7;
+}
+.product-img-slider .prev-img { left: 8px; }
+.product-img-slider .next-img { right: 8px; }
+
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.product-card {
+  flex: 1 1 calc(25% - 1.2rem); /* 4 per row desktop */
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .product-card {
+    flex: 1 1 calc(50% - 1.2rem); /* 2 per row mobile */
+  }
+}
+
+.product-category {
+  margin-top: 50px; /* Adjust if your navbar is taller/shorter */
+  padding: 20px 10px;
+  background: #fefefe;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
+       background: linear-gradient( to right , #f8f9fc, #b8e1ff);
+}
+.product-title {
+  color: #1a90ff;
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin: 1.5rem;
+}
+.category-nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.category-nav button {
+  padding: 10px 18px;
+    background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.category-nav .active,
+.category-nav button:hover {
+ background-color: #757575;
+}
+
+    </style>
+  </head>
+  <body>
+     <header class="navbar">
+      <div class="container">
+        <!-- ...existing code... -->
+        <div class="logo">
+          <img src="logo.png" alt="Genius" />
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+        
+          <a href="product.html">Product</a>
+          <a href="machine.html">Machines</a>
+        
+          <a href="work.html">Work</a>
+        </nav>
+        <!-- ...existing code... -->
+        <!-- ...existing code... -->
+      </div>
+    </header>
+    
+    <section class="product-category">
+      <h2 class="product-title">Our Products</h2>
+      <div class="category-nav">
+<button class="active">All</button>
+    <button>CNC Milling Machines</button>
+<button>CNC Turning Machines</button>
+<button>CNC Drilling Machines</button>
+<button>Vertical Machining Centers</button>
+<button>Horizontal Machining Centers</button>
+<button>Precision Cutting Tools</button>
+<button>Workholding & Fixtures</button>
+<button>Tool Holders & Spindles</button>
+<button>Measuring Instruments</button>
+<button>Automation & Robotics</button>
+
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card" data-category="Ice Creame Machines">
+          <div class="product-img-slider">
+            <img
+              src=""
+              alt="ice machine"
+              class="active"
+            />
+            <img
+              src=""
+              alt="ice machine 2"
+            />
+            <img
+              src=""
+              alt="ice machine 3"
+            />
+            <button class="prev-img">&#8592;</button>
+            <button class="next-img">&#8594;</button>
+          </div>
+          <h4>Heavy duty Ice creame machine</h4>
+          <p>₹1,20,000</p>
+        </div>
+        <div class="product-card" data-category="Ice Creame Machines">
+          <div class="product-img-slider">
+            <img
+              src=""
+              alt="ice machine"
+              class="active"
+            />
+            <img
+              src=""
+              alt="ice machine 2"
+            />
+            <img
+              src=""
+              alt="ice machine 3"
+            />
+            <button class="prev-img">&#8592;</button>
+            <button class="next-img">&#8594;</button>
+          </div>
+          <h4>Heavy duty Ice creame machine</h4>
+          <p>₹1,20,000</p>
+        </div>
+        <div class="product-card" data-category="Ice Creame Machines">
+          <div class="product-img-slider">
+            <img
+              src=""
+              alt="ice machine"
+              class="active"
+            />
+            <img
+              src=""
+              alt="ice machine 2"
+            />
+            <img
+              src=""
+              alt="ice machine 3"
+            />
+            <button class="prev-img">&#8592;</button>
+            <button class="next-img">&#8594;</button>
+          </div>
+          <h4>Heavy duty Ice creame machine</h4>
+          <p>₹1,20,000</p>
+        </div>
+        <div class="product-card" data-category="Sugercan Machines">
+          <img src="images/hob1.png" alt="Sugercan Machine" />
+          <h4>Sugercane Machines</h4>
+          <p>₹14,499</p>
+        </div>
+        <div class="product-card" data-category="Chimneys">
+          <img src="images/chimney1.png" alt="Chimney" />
+          <h4>Auto-clean Chimney</h4>
+          <p>₹11,200</p>
+        </div>
+        <div class="product-card" data-category="Ovens">
+          <img src="images/oven1.png" alt="Oven" />
+          <h4>Built-in Oven</h4>
+          <p>₹22,000</p>
+        </div>
+        <div class="product-card" data-category="Microwaves">
+          <img src="images/micro1.png" alt="Microwave" />
+          <h4>Microwave Grill</h4>
+          <p>₹8,999</p>
+        </div>
+        <div class="product-card" data-category="Accessories">
+          <img src="images/accessory1.png" alt="Tray Organizer" />
+          <h4>Tray Organizer</h4>
+          <p>₹1,499</p>
+        </div>
+        <div class="product-card" data-category="Sinks">
+          <img src="images/sink1.png" alt="Sink" />
+          <h4>Stainless Sink</h4>
+          <p>₹5,999</p>
+        </div>
+        <div class="product-card" data-category="Hobs">
+          <img src="images/hob1.png" alt="Gas Hob" />
+          <h4>4 Burner Gas Hob</h4>
+          <p>₹14,499</p>
+        </div>
+        <div class="product-card" data-category="Chimneys">
+          <img src="images/chimney1.png" alt="Chimney" />
+          <h4>Auto-clean Chimney</h4>
+          <p>₹11,200</p>
+        </div>
+        <div class="product-card" data-category="Ovens">
+          <img src="images/oven1.png" alt="Oven" />
+          <h4>Built-in Oven</h4>
+          <p>₹22,000</p>
+        </div>
+        <div class="product-card" data-category="Microwaves">
+          <img src="images/micro1.png" alt="Microwave" />
+          <h4>Microwave Grill</h4>
+          <p>₹8,999</p>
+        </div>
+        <div class="product-card" data-category="Accessories">
+          <img src="images/accessory1.png" alt="Tray Organizer" />
+          <h4>Tray Organizer</h4>
+          <p>₹1,499</p>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <span class="active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".category-nav button").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Remove active class from all buttons
+          document
+            .querySelectorAll(".category-nav button")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+          const category = this.textContent.trim();
+          document.querySelectorAll(".product-card").forEach((card) => {
+            if (
+              category === "All" ||
+              card.getAttribute("data-category") === category
+            ) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      const productsPerPage = 8; // Change this to show more/less per page
+      const productCards = Array.from(
+        document.querySelectorAll(".product-card")
+      );
+      const paginationSpans = Array.from(
+        document.querySelectorAll(".pagination span")
+      );
+
+      function showPage(page) {
+        // Hide all products
+        productCards.forEach((card) => (card.style.display = "none"));
+        // Get currently active category
+        const activeBtn = document.querySelector(".category-nav button.active");
+        const category = activeBtn ? activeBtn.textContent.trim() : "All";
+        // Filter products by category
+        const filtered = productCards.filter(
+          (card) =>
+            category === "All" ||
+            card.getAttribute("data-category") === category
+        );
+        // Show only products for this page
+        const start = (page - 1) * productsPerPage;
+        const end = start + productsPerPage;
+        filtered.slice(start, end).forEach((card) => (card.style.display = ""));
+        // Update pagination active state
+        paginationSpans.forEach((span, idx) => {
+          span.classList.toggle("active", idx === page - 1);
+        });
+      }
+
+      // Pagination click
+      paginationSpans.forEach((span, idx) => {
+        span.addEventListener("click", () => showPage(idx + 1));
+      });
+
+      // Category filter integration
+      document.querySelectorAll(".category-nav button").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Remove active class from all buttons
+          document
+            .querySelectorAll(".category-nav button")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+          // Always show first page of filtered results
+          showPage(1);
+        });
+      });
+
+      // Initial load
+      showPage(1);
+
+      document
+        .querySelectorAll(".product-img-slider")
+        .forEach(function (slider) {
+          const imgs = slider.querySelectorAll("img");
+          let current = 0;
+          function showImg(idx) {
+            imgs.forEach((img, i) => img.classList.toggle("active", i === idx));
+          }
+          slider
+            .querySelector(".prev-img")
+            .addEventListener("click", function (e) {
+              e.stopPropagation();
+              current = (current - 1 + imgs.length) % imgs.length;
+              showImg(current);
+            });
+          slider
+            .querySelector(".next-img")
+            .addEventListener("click", function (e) {
+              e.stopPropagation();
+              current = (current + 1) % imgs.length;
+              showImg(current);
+            });
+          showImg(current);
+        });
+    </script>
+  </body>
+</html>

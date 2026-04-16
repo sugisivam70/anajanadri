@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="icon" href="img/logo/Screenshot 2025-09-24 103228.png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    .service-hero-content h2 span.letter,
+    .service-hero-content h1 span.letter {
+      opacity: 0;
+      transform: translateY(-30px);
+      animation: fadeInUp 0.6s ease-out forwards;
+      display: inline-block;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .service-hero {
+      background: url(img/45412.jpg) no-repeat center center/cover;
+
+      padding: 100px 30px;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      text-align: left;
+    }
+
+    .service-hero-content {
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-hero-content h2 {
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    .service-hero-content h2 span {
+      font-weight: 700;
+      color: #4c4c4c;
+    }
+
+    .bg-text {
+      font-size: 100px;
+      font-weight: 700;
+
+      margin: 0;
+      line-height: 1;
+      bottom: 30px;
+      left: 30px;
+      color: #313131;
+    }
+
+    .legacy-section {
+      color: #000000;
+      padding: 80px 60px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .legacy-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    .legacy-left {
+      flex: 1;
+    }
+
+    .legacy-left h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .legacy-left h2 span {
+      color: #3fa9f5;
+    }
+
+    .legacy-left p {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      background: #3fa9f5;
+      padding: 12px 20px;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-primary i {
+      margin-left: 8px;
+    }
+
+    .btn-primary:hover {
+      background: #2a7fb6;
+    }
+
+    /* Right side */
+    .legacy-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .legacy-card {
+      background: #16161d;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .legacy-card:hover {
+      background: #1f1f28;
+    }
+
+    .legacy-card h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .legacy-card p {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin: 5px 0 0;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+      color: #3fa9f5;
+      flex-shrink: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .legacy-container {
+        flex-direction: column;
+      }
+    }
+
+  
+    /* Make navbar fixed and ensure hero section is not hidden */
+  </style>
+  <body>
+ <header class="navbar">
+      <div class="logo">
+        <img src="img/logo/Screenshot 2025-09-24 103609.png" alt="" />
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="precision.html">Precision</a>
+        <a href="Project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details?" class="btn-yellow">Enquiry ➜</a>
+      </nav>
+
+    </header>
+
+
+    <section class="service-hero" id="services">
+      <div class="service-hero-content">
+        <h2>Let's <br /><span>Make an</span></h2>
+        <h1 class="bg-text">Contact</h1>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-left">
+        <span class="tag">Reliable CNC</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Contact us if you need immediate assistance or custom CNC solutions.
+        </p>
+      </div>
+
+      <div class="faq-right">
+        <div class="faq-item active">
+          <h4>01. What CNC services do you offer?</h4>
+          <p>
+            We offer CNC milling, turning, prototyping, batch production, and
+            custom part machining services for various industries.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>02. How do I request a quote?</h4>
+          <p>
+            Submit your technical drawings or requirements via our contact form
+            or email, and we’ll provide a detailed quotation.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>03. What is the lead time for projects?</h4>
+          <p>
+            Lead times vary based on complexity, but most projects are completed
+            within 7–15 business days.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>04. Can you work with custom materials?</h4>
+          <p>
+            Yes, we can work with aluminum, stainless steel, brass, plastics,
+            and more based on your project needs.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h4>05. Do you offer post-processing or finishing?</h4>
+          <p>
+            We provide surface treatments like anodizing, polishing, powder
+            coating, and laser engraving upon request.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="legacy-section">
+      <div class="legacy-container">
+        <!-- Left Side -->
+        <div class="legacy-left">
+          <h2>Our Legacy of <span>Success</span></h2>
+          <p>
+            From precision machining to industry innovation, Genius Tech has
+            been recognized worldwide for its CNC excellence and commitment to
+            quality.
+          </p>
+          <a href="#" class="btn-primary">
+            Get Started <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Right Side -->
+        <div class="legacy-right">
+          <div class="legacy-card">
+            <h3>2024 Best CNC Innovation Award</h3>
+            <p>Global Manufacturing Excellence</p>
+            <span class="icon"><i class="fa fa-arrow-right"></i></span>
+          </div>
+
+          <div class="legacy-card">
+            <h3>2023 Industry 4.0 Pioneer Recognition</h3>
+            <p>International Automation Awards</p>
+            <span class="icon"><i class="fa fa-arrow-right"></i></span>
+          </div>
+
+          <div class="legacy-card">
+            <h3>2022 Precision Engineering Excellence</h3>
+            <p>National CNC Awards</p>
+            <span class="icon"><i class="fa fa-arrow-right"></i></span>
+          </div>
+
+          <div class="legacy-card">
+            <h3>2021 Outstanding CNC Manufacturer</h3>
+            <p>Asia-Pacific Innovation Summit</p>
+            <span class="icon"><i class="fa fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Column -->
+        <div class="footer-brand">
+          <img
+            src="img/logo/Screenshot 2025-09-24 103609.png"
+            alt="Genius Tech Logo"
+            class="logo"
+          />
+          <p>
+            Genius Technology specializes in high-precision VMC milling, and
+            press tool and Mold solutions. Delivering innovation, accuracy, and
+            reliability for global manufacturing industries.
+          </p>
+        </div>
+
+        <!-- Quick Menu -->
+        <div class="footer-links">
+          <h4>Quick Menu</h4>
+          <ul>
+            <li><a href="services.html">Vmc & Wirecut Molding</a></li>
+            <li><a href="precision.html">Press & Moldtools Making </a></li>
+            <li><a href="precision.html">Tool Room Activities</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">FAQs</a></li>
+            <li><a href="contact.html">Quality Policy</a></li>
+            <li><a href="contact.html">Certifications</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://in.linkedin.com/in/abdul-lashkari-8798a7129?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
+              title="LinkedIn target="
+              _blank
+              rel="noopener"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/share/1JmvB4UV7W/"
+              title="Facebook  target="
+              _blank
+              rel="noopener    "
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/genius.technology_?igsh=MTd4c3Y5YzJkZmF1Mg=="
+              title="Instagram target="
+              _blank
+              rel="noopener"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details? target="
+              _blank
+              rel="noopener"
+              title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+         <p>
+            <a
+              href="https://www.google.com/maps/place/genius+technologies/@13.0064202,77.4947271,808m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae3d001422d6f5:0x357eb3ad3a09bf37!8m2!3d13.006415!4d77.497302!16s%2Fg%2F11y013t21p?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+              Genius-technology 195, Andrahalli Main Rd, Peenya 2nd Stage, Shushruti Nagar, Bengaluru, Karnataka 560091
+            </a>
+          </p>
+          <p>
+            <a href="tel:+81236 38613">
+              <i class="fas fa-phone-alt"></i> +91 +91 81236 38613
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@genius-technology.co.in&su=Product%20Enquiry%20from%20Website&body=Hello%20Genius%20Tech%2C%0A%0AI%20am%20interested%20in%20your%20products.%20Please%20share%20more%20details%20with%20me.%0A%0ARegards%2C%0A[Your%20Name] "
+              rel="noopener"
+              target="_blank"
+            >
+              <i class="fas fa-envelope"></i> admin@genius-technology.co.in
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Copyright 2025. Genius Tech CNC. All rights reserved.</p>
+      </div>
+    </footer>
+
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        menuToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("active");
+        });
+      });
+    </script>
+    <script>
+
+
+
+
+
+
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Service Hero h2 animation
+        const serviceHeroH2 = document.querySelector(
+          ".service-hero-content h2"
+        );
+        if (serviceHeroH2) {
+          // Split text into spans if not already done
+          if (!serviceHeroH2.querySelector("span.letter")) {
+            const html = serviceHeroH2.innerHTML;
+            // Split by <br> and animate each line
+            serviceHeroH2.innerHTML = "";
+            html.split("<br>").forEach((line, lineIdx) => {
+              if (lineIdx > 0)
+                serviceHeroH2.appendChild(document.createElement("br"));
+              line
+                .replace(/<[^>]+>/g, "")
+                .split("")
+                .forEach((char, i) => {
+                  const span = document.createElement("span");
+                  span.className = "letter";
+                  span.textContent = char === " " ? "\u00A0" : char;
+                  serviceHeroH2.appendChild(span);
+                });
+            });
+          }
+          serviceHeroH2.querySelectorAll("span.letter").forEach((span) => {
+            span.style.opacity = 0;
+            span.style.transform = "translateY(-30px)";
+            span.style.animation = "none";
+          });
+          const observerH2 = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                serviceHeroH2
+                  .querySelectorAll("span.letter")
+                  .forEach((span, i) => {
+                    span.style.animation = "fadeInUp 0.6s ease-out forwards";
+                    span.style.animationDelay = i * 0.06 + "s";
+                  });
+              }
+            },
+            { threshold: 0.5 }
+          );
+          observerH2.observe(serviceHeroH2);
+        }
+
+        // Service Hero h1 animation
+        const serviceHeroH1 = document.querySelector(
+          ".service-hero-content h1"
+        );
+        if (serviceHeroH1) {
+          if (!serviceHeroH1.querySelector("span.letter")) {
+            const text = serviceHeroH1.textContent;
+            serviceHeroH1.innerHTML = "";
+            text.split("").forEach((char) => {
+              const span = document.createElement("span");
+              span.className = "letter";
+              span.textContent = char === " " ? "\u00A0" : char;
+              serviceHeroH1.appendChild(span);
+            });
+          }
+          serviceHeroH1.querySelectorAll("span.letter").forEach((span) => {
+            span.style.opacity = 0;
+            span.style.transform = "translateY(-30px)";
+            span.style.animation = "none";
+          });
+          const observerH1 = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                serviceHeroH1
+                  .querySelectorAll("span.letter")
+                  .forEach((span, i) => {
+                    span.style.animation = "fadeInUp 0.6s ease-out forwards";
+                    span.style.animationDelay = i * 0.06 + "s";
+                  });
+              }
+            },
+            { threshold: 0.5 }
+          );
+          observerH1.observe(serviceHeroH1);
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

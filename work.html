@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genius Tech - Work Section</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Section Background */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+ background: #ffffff;
+  color: #000000;
+}
+
+/* Header */
+
+.work-section {
+  margin-top: 2rem;
+  padding-bottom: 60px;
+  background: linear-gradient( to right , #f8f9fc, #b8e1ff);
+}  
+.work-header {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.work-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.work-header h2 span {
+  color: #3fa9f5;
+}
+
+.work-header p {
+  font-size: 1rem;
+  color: #525252;
+  margin-top: 10px;
+}
+
+/* Grid */
+.work-grid {
+   background: linear-gradient( to right , #f8f9fc, #b8e1ff);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 20px;
+  padding: 20px 60px 60px;
+}
+
+/* Card */
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.work-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+/* Info */
+.work-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+}
+
+.work-info h3  {
+  font-size: 1.1rem;
+  margin: 5px 0 0;
+  color: #ffffff;
+}
+.tag{
+  color: #fff;
+}
+
+.tag {
+  font-size: 0.8rem;
+  background: rgba(63, 169, 245, 0.8);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* CTA button */
+.cta-btn {
+  background: #3fa9f5;
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #2a7fb6;
+}
+
+/* Special card sizing */
+.large {
+  grid-row: span 2;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .large {
+    grid-row: span 1;
+  }
+}
+
+
+.legacy-section {
+  background: linear-gradient( to right , #f8f9fc, #b8e1ff);
+  color: #000000;
+  padding: 80px 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.legacy-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.legacy-left {
+  flex: 1;
+}
+
+.legacy-left h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.legacy-left h2 span {
+  color: #3fa9f5;
+}
+
+.legacy-left p {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: #3fa9f5;
+  padding: 12px 20px;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary i {
+  margin-left: 8px;
+}
+
+.btn-primary:hover {
+  background: #2a7fb6;
+}
+
+/* Right side */
+.legacy-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.legacy-card {
+  background: #16161d;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.legacy-card:hover {
+  background: #1f1f28;
+}
+
+.legacy-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.legacy-card p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 5px 0 0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: #3fa9f5;
+  flex-shrink: 0;
+}
+  
+/* Responsive */
+@media (max-width: 900px) {
+  .legacy-container {
+    flex-direction: column;
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+/* Make navbar fixed and ensure hero section is not hidden */
+
+  </style>
+</head>
+<body>
+      <header class="navbar">
+      <div class="container">
+        <!-- ...existing code... -->
+        <div class="logo">
+          <img src="logo.png" alt="Genius" />
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#abt">About</a>
+          <a href="product.html">Product</a>
+          <a href="machine.html">Machines</a>
+          <a href="#feature">Service</a>
+          <a href="work.html">Work</a>
+          
+        </nav>
+        <!-- ...existing code... -->
+        <!-- ...existing code... -->
+      </div>
+    </header>
+
+
+  <section class="work-section">
+    <div class="work-header">
+      <h2>Making <span>Precision Shine</span></h2>
+      <p>
+        At Genius Tech, we deliver cutting-edge CNC machining solutions with precision,
+        efficiency, and innovation.
+      </p>
+    </div>
+
+    <div class="work-grid">
+      <!-- Card 1 -->
+      <div class="work-card">
+        <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="CNC Milling" />
+        <div class="work-info">
+          <span class="tag">Milling</span>
+          <h3>High-Precision CNC Milling</h3>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="work-card">
+        <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="CNC Turning" />
+        <div class="work-info">
+          <span class="tag">Turning</span>
+          <h3>Advanced CNC Turning Solutions</h3>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="work-card large">
+        <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="CNC Assembly" />
+        <div class="work-info">
+          <button class="cta-btn">Get Started</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="work-card">
+        <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="Quality Assurance" />
+        <div class="work-info">
+          <span class="tag">Quality</span>
+          <h3>Strict Quality Control & Inspection</h3>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="work-card wide">
+        <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="Innovation in CNC" />
+        <div class="work-info">
+          <span class="tag">Innovation</span>
+          <h3>Innovation for Tomorrow’s CNC Technology</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="legacy-section">
+  <div class="legacy-container">
+    <!-- Left Side -->
+    <div class="legacy-left">
+      <h2>Our Legacy of <span>Success</span></h2>
+      <p>
+        From precision machining to industry innovation, Genius Tech has been 
+        recognized worldwide for its CNC excellence and commitment to quality.
+      </p>
+      <a href="#" class="btn-primary">
+        Get Started <i class="fa fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <!-- Right Side -->
+    <div class="legacy-right">
+      <div class="legacy-card">
+        <h3>2024 Best CNC Innovation Award</h3>
+        <p>Global Manufacturing Excellence</p>
+        <span class="icon"><i class="fa fa-arrow-right"></i></span>
+      </div>
+
+      <div class="legacy-card">
+        <h3>2023 Industry 4.0 Pioneer Recognition</h3>
+        <p>International Automation Awards</p>
+        <span class="icon"><i class="fa fa-arrow-right"></i></span>
+      </div>
+
+      <div class="legacy-card">
+        <h3>2022 Precision Engineering Excellence</h3>
+        <p>National CNC Awards</p>
+        <span class="icon"><i class="fa fa-arrow-right"></i></span>
+      </div>
+
+      <div class="legacy-card">
+        <h3>2021 Outstanding CNC Manufacturer</h3>
+        <p>Asia-Pacific Innovation Summit</p>
+        <span class="icon"><i class="fa fa-arrow-right"></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
