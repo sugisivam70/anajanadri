@@ -3,1026 +3,621 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service</title>
-    <link rel="icon" href="img/logo/Screenshot 2025-09-24 103228.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <title>ANJANADRI PRECISION | Services</title>
+    <link rel="icon" href="img/logo/anjandri-logo-final.png" />
+    <link rel="stylesheet" href="style.css?v=20260210" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     <style>
-      .service-hero-content h2 span.letter,
-      .service-hero-content h1 span.letter {
+      /* ── base reset ── */
+      .menu-toggle { display: none; }
+      .services-page { background: linear-gradient(180deg, #f8fbff 0%, #fff 45%, #f5f8fc 100%); }
+      .services-shell, .footer-container, .footer-bottom { max-width: 1220px; margin: 0 auto; }
+
+      /* ═══════════════════════════════════════════
+         SCROLL-REVEAL  – base states
+      ═══════════════════════════════════════════ */
+      .reveal {
         opacity: 0;
-        transform: translateY(-30px);
-        animation: fadeInUp 0.6s ease-out forwards;
-        display: inline-block;
+        transform: translateY(36px);
+        transition: opacity 0.72s cubic-bezier(.22,.61,.36,1),
+                    transform 0.72s cubic-bezier(.22,.61,.36,1);
       }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(-30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
       }
+      /* stagger children */
+      .stagger > * { opacity: 0; transform: translateY(28px);
+        transition: opacity 0.65s cubic-bezier(.22,.61,.36,1),
+                    transform 0.65s cubic-bezier(.22,.61,.36,1); }
+      .stagger.visible > *:nth-child(1)  { opacity:1; transform:none; transition-delay:.05s; }
+      .stagger.visible > *:nth-child(2)  { opacity:1; transform:none; transition-delay:.14s; }
+      .stagger.visible > *:nth-child(3)  { opacity:1; transform:none; transition-delay:.23s; }
+      .stagger.visible > *:nth-child(4)  { opacity:1; transform:none; transition-delay:.32s; }
+      .stagger.visible > *:nth-child(5)  { opacity:1; transform:none; transition-delay:.41s; }
+      .stagger.visible > *:nth-child(6)  { opacity:1; transform:none; transition-delay:.50s; }
 
+      /* slide-in from sides */
+      .reveal-left  { opacity:0; transform:translateX(-44px);
+        transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+      .reveal-right { opacity:0; transform:translateX(44px);
+        transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+      .reveal-left.visible, .reveal-right.visible { opacity:1; transform:none; }
+
+      /* scale-up for CTA */
+      .reveal-scale { opacity:0; transform:scale(.96);
+        transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); }
+      .reveal-scale.visible { opacity:1; transform:none; }
+
+      /* ═══════════════════════════════════════════
+         SERVICE HERO
+      ═══════════════════════════════════════════ */
       .service-hero {
-        background-image: url(img/2534.jpg);
-        background-size: cover;
-        background-position: center;
-        padding: 100px 30px;
+        padding: 150px 40px 90px;
+        background: linear-gradient(115deg, rgba(8,21,40,.92), rgba(8,21,40,.72)), url("img/27613.jpg") center/cover no-repeat;
+        color: #fff;
         position: relative;
         overflow: hidden;
-        color: #fff;
-        text-align: left;
       }
+      /* subtle shimmer overlay */
+      .service-hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(134,201,255,.07) 0%, transparent 60%);
+        pointer-events: none;
+      }
+      .service-hero .eyebrow {
+        display: inline-block; padding: 8px 16px; border-radius: 999px;
+        background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16);
+        font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+      }
+      .service-hero-grid {
+        display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: end;
+      }
+      .service-hero h1 { margin: 20px 0 16px; font-size: clamp(2.5rem,4.8vw,4.8rem); line-height: 1.05; }
+      .service-hero h1 span { color: #86c9ff; }
+      .service-hero p { margin: 0; max-width: 760px; line-height: 1.8; color: rgba(255,255,255,.86); }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+      .btn-outline {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 13px 22px; border-radius: 999px; text-decoration: none;
+        border: 1px solid rgba(255,255,255,.24); color: #fff; font-weight: 600;
+        transition: background .2s, border-color .2s;
+      }
+      .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4); }
 
-      .service-hero-content {
-        max-width: 700px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .service-hero-content h2 {
-        font-size: 36px;
-        font-weight: 300;
-        line-height: 1.4;
-      }
-
-      .service-hero-content h2 span {
-        font-weight: 700;
-        color: #ffffff;
-      }
-
-      .bg-text {
-        font-size: 100px;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1;
-        bottom: 30px;
-        left: 30px;
-        color: #000000;
-      }
-
-      /* Service Section */
-      .services {
-        padding: 20px 0;
-        background: #f9f9f9;
-        text-align: center;
-        font-family: "Poppins", Arial, sans-serif;
-        background-image: url(/img/nav-logo/ChatGPT\ Image\ Jul\ 9\,\ 2025\,\ 10_51_47\ PM.png);
-      }
-
-      .section-title {
-        font-size: 42px;
-        margin-bottom: 40px;
-      }
-
-      .section-title span {
-        color: #007bff;
-      }
-
-      .service-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-      }
-
-      .service-box {
-        background: #f7f9fc;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-        flex: 1 1 280px;
-        transition: 0.3s;
-        cursor: pointer;
-      }
-
-      .service-box i {
-        color: #007bff;
-        margin-bottom: 15px;
-      }
-
-      .service-box h4 {
-        margin: 15px 0 10px;
-      }
-      .service-box p {
-        font-size: 0.95rem;
-        color: #6f6f6f;
-      }
-
-      .service-box.active,
-      .service-box:hover {
-        background: black;
-        color: #ffffff;
-      }
-      .service-box:hover p {
-        color: #bdbdbd;
-      }
-
-      .service-box.active i,
-      .service-box:hover i {
-        color: #007bff;
-      }
-
-      /* Expertise Section */
-      .expertise {
-        padding: 30px 0;
-        text-align: center;
-        background: #fff;
-        background-image: url(/img/hero/img\ bg.png);
-        font-family: "Poppins", Arial, sans-serif;
-      }
-
-      .expertise-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-      }
-
-      .expert-box {
-        flex: 1 1 280px;
-      }
-
-      .expert-box img {
+      /* ═══════════════════════════════════════════
+         SECTION IMAGE BANNER  (placeholder ready)
+      ═══════════════════════════════════════════ */
+      .section-img-wrap {
         width: 100%;
-        border-radius: 10px;
-        height: 200px;
-        object-fit: contain;
-        margin-bottom: 15px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 48px;
+        position: relative;
+        background: #e8eef6;
+        /* change aspect-ratio per section as needed */
+        aspect-ratio: 21 / 6;
       }
-
-      .expert-box h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin: 10px 0;
-        color: #ff6b1a;
+      .section-img-wrap img {
+        width: 100%; height: 100%; object-fit: cover;
+        display: block;
+        transition: transform .6s ease;
       }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 48px;
-        }
-
-        .section-title {
-          font-size: 24px;
-        }
-
-        .service-hero-content h1 {
-          letter-spacing: -0.06em;
-        }
-
-        .service-box,
-        .expert-box {
-          flex: 1 1 100%;
-        }
+      .section-img-wrap:hover img { transform: scale(1.025); }
+      /* placeholder when no real img yet */
+      .section-img-placeholder {
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #e4ecf7 0%, #dbe8f5 100%);
+        color: #7a9ab8;
+        font-size: 14px; letter-spacing: .05em;
       }
+      .section-img-placeholder i { font-size: 2rem; opacity: .45; }
 
-      /* Hide menu toggle by default */
-      .menu-toggle {
-        display: none;
+      /* ═══════════════════════════════════════════
+         CARDS  (shared)
+      ═══════════════════════════════════════════ */
+      .hero-card, .service-card-lite, .info-card, .machine-card {
+        background: #fff; border-radius: 24px; padding: 28px;
+        border: 1px solid rgba(15,36,64,.08);
+        box-shadow: 0 18px 40px rgba(10,23,48,.08);
+        transition: transform .35s ease, box-shadow .35s ease;
       }
+      .service-card-lite:hover, .machine-card:hover, .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 28px 56px rgba(10,23,48,.13);
+      }
+      .hero-card { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.12); color: #fff; }
+      .hero-card h3, .service-card-lite h3, .info-card h3, .machine-card h3 { margin: 0 0 14px; color: #0a1730; }
+      .hero-card h3 { color: #fff; }
+      .hero-card ul, .machine-card ul { list-style: none; margin: 0; padding: 0; }
+      .hero-card li, .machine-card li { line-height: 1.7; }
+      .hero-card li + li, .machine-card li + li { margin-top: 10px; }
+      .hero-card i { color: #ffca38; margin-right: 10px; }
 
-      /* Mobile styles */
+      /* icon circles */
+      .service-card-lite i, .why-grid i {
+        width: 52px; height: 52px; display: inline-flex;
+        align-items: center; justify-content: center;
+        border-radius: 16px; background: rgba(13,110,253,.1);
+        color: #0d6efd; font-size: 1.15rem;
+        transition: background .25s, color .25s, transform .3s;
+      }
+      .service-card-lite:hover i { background: #0d6efd; color: #fff; transform: rotate(-6deg) scale(1.08); }
+
+      /* ═══════════════════════════════════════════
+         SECTION STRUCTURE
+      ═══════════════════════════════════════════ */
+      .section { padding: 78px 40px 0; }
+      .section-head { max-width: 760px; margin-bottom: 30px; }
+      .section-head p:first-child {
+        margin: 0 0 10px; color: #0d6efd; font-size: .82rem;
+        letter-spacing: .16em; text-transform: uppercase; font-weight: 600;
+      }
+      .section-head h2 { margin: 0 0 12px; font-size: clamp(2rem,3vw,3rem); color: #0a1730; }
+      .section-head p:last-child { margin: 0; color: #5b6574; line-height: 1.8; }
+
+      /* ═══════════════════════════════════════════
+         GRIDS
+      ═══════════════════════════════════════════ */
+      .service-grid  { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+      .why-grid      { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 22px; }
+      .machine-grid, .info-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+
+      /* ═══════════════════════════════════════════
+         STATS
+      ═══════════════════════════════════════════ */
+      .stats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; margin-top: 18px; }
+      .stat  { padding: 18px; border-radius: 18px; background: #f4f8fd; color: #304056; }
+      .stat strong { display: block; margin-bottom: 8px; font-size: 1.35rem; color: #0a1730; }
+      .service-card-lite p, .info-card p, .machine-card p, .why-grid p { margin: 0; color: #5b6574; line-height: 1.75; }
+
+      /* ═══════════════════════════════════════════
+         MACHINE CARD LIST ITEMS
+      ═══════════════════════════════════════════ */
+      .machine-card li {
+        padding: 12px 14px; border-radius: 14px;
+        background: #f4f8fd; color: #304056;
+        transition: background .2s;
+      }
+      .machine-card li:hover { background: #e6f0ff; }
+      .machine-card strong { color: #0a1730; }
+
+      /* ═══════════════════════════════════════════
+         WHY BOX
+      ═══════════════════════════════════════════ */
+      .why-box {
+        background: #fff; border-radius: 22px; padding: 24px;
+        border: 1px solid rgba(15,36,64,.08);
+        box-shadow: 0 18px 40px rgba(10,23,48,.06);
+        transition: transform .35s ease, box-shadow .35s ease;
+      }
+      .why-box:hover { transform: translateY(-4px); box-shadow: 0 26px 50px rgba(10,23,48,.12); }
+      .why-box h3 { margin: 16px 0 10px; color: #0a1730; font-size: 1.1rem; }
+
+      /* ═══════════════════════════════════════════
+         CTA SECTION
+      ═══════════════════════════════════════════ */
+      .service-cta { padding: 78px 40px 80px; }
+      .cta-box {
+        border-radius: 30px; padding: 34px;
+        background: linear-gradient(135deg, rgba(10,23,48,.98), rgba(16,86,184,.9)), url("img/19820.jpg") center/cover no-repeat;
+        color: #fff; display: flex; justify-content: space-between; gap: 20px; align-items: center;
+      }
+      .cta-box h2 { margin: 0 0 10px; font-size: clamp(1.8rem,3vw,2.5rem); }
+      .cta-box p  { margin: 0; max-width: 720px; color: rgba(255,255,255,.84); line-height: 1.8; }
+      .btn-yellow {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 13px 26px; border-radius: 999px; background: #ffca38;
+        color: #0a1730; font-weight: 700; text-decoration: none;
+        white-space: nowrap;
+        transition: background .2s, transform .2s, box-shadow .2s;
+      }
+      .btn-yellow:hover { background: #ffd55f; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,202,56,.4); }
+
+      /* ═══════════════════════════════════════════
+         FOOTER
+      ═══════════════════════════════════════════ */
+      .footer-brand .footer-logo { width: min(100%,300px); height: auto; max-width: 300px; display: block; margin-bottom: 16px; }
+
+      /* ═══════════════════════════════════════════
+         COUNTER ANIMATION for stats
+      ═══════════════════════════════════════════ */
+      .count-up { display: inline-block; }
+
+      /* ═══════════════════════════════════════════
+         RESPONSIVE
+      ═══════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .service-hero-grid, .info-grid, .machine-grid, .cta-box { grid-template-columns: 1fr; }
+        .service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .why-grid, .stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        .section-img-wrap { aspect-ratio: 16/5; }
+      }
       @media (max-width: 768px) {
         .menu-toggle {
-          display: block;
-          background: none;
-          border: none;
-          font-size: 2rem;
-          color: #1a73e8;
-          margin-left: 10px;
-          cursor: pointer;
-          z-index: 101;
+          display: block; background: none; border: none; font-size: 2rem;
+          color: #1a73e8; margin-left: 10px; cursor: pointer; z-index: 101;
         }
         .nav-links {
-          display: none;
-          position: absolute;
-          top: 70px; /* adjust if your navbar is taller/shorter */
-          left: 0;
-          width: 100%;
-          background: #fff;
-          flex-direction: column;
-          align-items: flex-start;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-          z-index: 100;
-          padding: 20px 0;
+          display: none; position: absolute; top: 70px; left: 0; width: 100%;
+          background: #fff; flex-direction: column; align-items: flex-start;
+          box-shadow: 0 12px 30px rgba(0,0,0,.08); z-index: 100; padding: 20px 0;
         }
-        .nav-links.active {
-          display: flex;
-        }
+        .nav-links.active { display: flex; }
         .nav-links a {
-          width: 100%;
-          padding: 16px 24px;
-          border-bottom: 1px solid #eee;
-          font-size: 18px;
-          color: #1a73e8;
-          text-align: left;
+          width: 100%; padding: 16px 24px; border-bottom: 1px solid #eee;
+          font-size: 18px; color: #1a73e8; text-align: left;
         }
-        .btn-yellow {
-          margin: 10px 24px;
-          width: calc(100% - 48px);
-          text-align: center;
-        }
-        .navbar {
-          flex-wrap: wrap;
-          padding: 16px 10px;
-          position: relative;
-        }
+        .btn-yellow { margin: 10px 24px; width: calc(100% - 48px); text-align: center; }
+        .navbar { flex-wrap: wrap; padding: 16px 10px; position: relative; }
+        .service-hero, .section, .service-cta { padding-left: 20px; padding-right: 20px; }
+        .service-hero { padding-top: 126px; padding-bottom: 70px; }
+        .service-grid, .why-grid, .stats { grid-template-columns: 1fr; }
+        .hero-actions { flex-direction: column; }
+        .hero-actions .btn-yellow, .hero-actions .btn-outline { width: 100%; margin: 0; text-align: center; }
+        .section-img-wrap { aspect-ratio: 16/7; border-radius: 12px; }
       }
-
-      /* Desktop: always show nav-links */
       @media (min-width: 769px) {
         .nav-links {
-          display: flex !important;
-          position: static;
-          flex-direction: row;
-          align-items: center;
-          background: none;
-          box-shadow: none;
-          padding: 0;
-          width: auto;
+          display: flex !important; position: static; flex-direction: row; align-items: center;
+          background: none; box-shadow: none; padding: 0; width: auto;
         }
-        .menu-toggle {
-          display: none !important;
-        }
-      }
-      /* Fade-up animation for service section */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(32px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .services {
-        opacity: 0;
-        transform: translateY(32px);
-        animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
-        animation-delay: 0.2s;
-      }
-
-      /* Fade-up animation for feature section */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(32px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .features-section {
-        opacity: 0;
-        transform: translateY(32px);
-        animation: none;
+        .menu-toggle { display: none !important; }
       }
     </style>
   </head>
-  <body>
- <header class="navbar">
+
+  <body class="services-page">
+    <header class="navbar">
       <div class="logo">
-        <img src="img/logo/anjanadri_logo_png.png" alt="" />
+        <img src="img/logo/anjanadri_logo_png.png" alt="Anjanadri Precision logo" />
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html">About</a>
         <a href="services.html">Services</a>
         <a href="precision.html">Precision</a>
         <a href="Project.html">Projects</a>
         <a href="contact.html">Contact</a>
-        <a href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details?" class="btn-yellow">Enquiry ➜</a>
+        <a href="https://wa.me/916360368459?text=Hi%20Anjanadri%20Precision!%20I%20am%20interested%20in%20your%20tooling%20and%20machining%20services.%20Please%20share%20more%20details." class="btn-yellow">Enquiry ➜</a>
       </nav>
     </header>
 
-    <!-- Hero Section -->
+    <main>
 
-   <section class="hero">
-      <img class="bgimg" src="img/27613.jpg" alt="VMC Background" />
+      <!-- ════════════════════════════════
+           SECTION 1 — CORE OFFERINGS
+      ════════════════════════════════ -->
+      <section class="section" id="service-portfolio">
+        <div class="services-shell">
 
-      <div class="hero-content">
-        <div class="hero-left">
-          <h1><span>VMC</span> Solutions</h1>
-          <div class="tagline">
-            High-precision vertical machining for critical industrial needs.
+          <!-- Section image — replace src when ready -->
+          <div class="section-img-wrap reveal">
+            <img src="img/services/satmping-service.png"
+                 alt="Anjanadri Precision — services overview"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="section-img-placeholder" style="display:none">
+              <i class="fas fa-image"></i>
+              <span>Add your image: img/services-overview.jpg</span>
+            </div>
           </div>
-        </div>
 
-        <!-- VMC Image -->
-        <div class="hero-image">
-          <img src="img/19820.jpg" alt="VMC Machine" />
-          <div class="badge nx">
-            GT–VMC 900<br />
-            <small>Advanced VMC Milling System</small><br />
-            <a href="#">View Specs</a>
-          </div>
-          <div class="badge sun">PRECISION<br /><small>±0.01 mm</small></div>
-        </div>
-      </div>
-
-      <!-- Feature Cards -->
-      <div class="herofeatures">
-        <div class="herofeature-card review">
-          <p>Customer Reviews</p>
-          <div class="stars">⭐ 4.9</div>
-          <a href="#">See Feedback</a>
-        </div>
-
-        <div class="herofeature-card battery">
-          <p>High-Speed Spindle</p>
-          <img
-            src="img/abt/istockphoto-680194864-612x612.jpg"
-            alt="High Speed Spindle"
-          />
-        </div>
-
-        <div class="herofeature-card battery">
-          <p>Durability</p>
-          <small>24/7 Heavy Duty Operation</small>
-          <img
-            src="img/abt/metal-industry-workshop-precision-machinery-automated-production-line-robotic-arm-generated-by-ai-free-photo.jpg"
-            alt="High Speed Spindle"
-          />
-        </div>
-
-        <div class="herofeature-card battery">
-          <p>Automation Ready</p>
-          <small>Compatible with ATC & Robotics</small>
-          <img
-            src="img/abt/automotive-parts-manufacturing-canada-with-precision-engineering-processes_1291600-47172.jpg"
-            alt="High Speed Spindle"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Service Offerings -->
-    <section class="services">
-      <div class="service-container">
-        <h2 class="section-title">Our <span>Service</span> Offering</h2>
-        <div class="service-grid">
-          <div class="service-box">
-            <i class="fas fa-drafting-compass fa-2x"></i>
-            <h4>Design & Prototyping</h4>
+          <div class="section-head reveal">
+            <p>Core Offerings</p>
+            <h2>Services of Anjanadri Precision</h2>
             <p>
-              CAD/CAM design and prototype development to turn ideas into
-              manufacturable parts.
+              Built around the real Anjanadri Precision profile — visitors see the actual service mix and manufacturing strengths, not generic CNC copy.
             </p>
           </div>
 
-          <div class="service-box active">
-            <i class="fas fa-cogs fa-2x"></i>
-            <h4>Precision CNC Machining</h4>
+          <div class="service-grid stagger">
+            <article class="service-card-lite">
+              <i class="fas fa-cubes"></i>
+              <h3>Moulding Tools</h3>
+              <p>Plastic molds, injection molding tools, rubber molds, and customer-specific moulding solutions for repeatable production.</p>
+            </article>
+            <article class="service-card-lite">
+              <i class="fas fa-hammer"></i>
+              <h3>Press Tools &amp; Sheet Metal Tooling</h3>
+              <p>Press tools, fine blanking tools, and sheet metal tooling for production-oriented automotive and industrial applications.</p>
+            </article>
+            <article class="service-card-lite">
+              <i class="fas fa-compass-drafting"></i>
+              <h3>Gauges, Jigs &amp; Fixtures</h3>
+              <p>Custom gauges, holding fixtures, and line-support tooling designed to improve repeatability, setup, and inspection accuracy.</p>
+            </article>
+            <article class="service-card-lite">
+              <i class="fas fa-gears"></i>
+              <h3>PDC &amp; Die-Casting Support</h3>
+              <p>Process-focused support from customer product design and manufacturing feasibility through die-casting-related tooling execution.</p>
+            </article>
+            <article class="service-card-lite">
+              <i class="fas fa-screwdriver-wrench"></i>
+              <h3>Toolroom &amp; Job Work</h3>
+              <p>Flexible toolroom activities, machining support, one-off job work, rework, and alloys-related manufacturing assistance.</p>
+            </article>
+            <article class="service-card-lite">
+              <i class="fas fa-lightbulb"></i>
+              <h3>New Product Development</h3>
+              <p>Dedicated development work to understand varied client requirements and convert ideas into manufacturable tooling and components.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           SECTION 2 — CAPABILITY SNAPSHOT
+      ════════════════════════════════ -->
+      <section class="section">
+        <div class="services-shell">
+
+          <!-- Section image -->
+          <div class="section-img-wrap reveal">
+            <img src="img/capability-snapshot.jpg"
+                 alt="Manufacturing floor at Anjanadri Precision"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="section-img-placeholder" style="display:none">
+              <i class="fas fa-image"></i>
+              <span>Add your image: img/capability-snapshot.jpg</span>
+            </div>
+          </div>
+
+          <div class="section-head reveal">
+            <p>Capability Snapshot</p>
+            <h2>Operational depth behind every project</h2>
             <p>
-              High-accuracy machining for moulds, press tools, jigs, and
-              fixtures across industries.
+              Technological leadership, manufacturing excellence, and continuous improvement — backed by real numbers from the company profile.
             </p>
           </div>
 
-          <div class="service-box">
-            <i class="fas fa-industry fa-2x"></i>
-            <h4>Production Manufacturing</h4>
+          <div class="info-grid">
+            <article class="info-card reveal-left">
+              <h3>Built for development and supply continuity</h3>
+              <p>
+                Anjanadri Precision works from product development and feasibility stages through tool manufacturing, finished-product delivery, and continuation into mass production under one roof.
+              </p>
+              <div class="stats stagger">
+                <div class="stat"><strong><span class="count-up" data-target="15">0</span></strong>Employees on machining, tooling, and development support.</div>
+                <div class="stat"><strong><span class="count-up" data-target="3">0</span></strong>Shifts configured for flexible production scheduling.</div>
+                <div class="stat"><strong><span class="count-up" data-target="60">0</span>%</strong>Current production capacity utilization.</div>
+                <div class="stat"><strong>ISO</strong>9001:2015 certified manufacturing processes.</div>
+              </div>
+            </article>
+            <article class="info-card reveal-right">
+              <h3>Customer-focused working model</h3>
+              <p>
+                Hands-on customer assistance from product design, feasibility study, and manufacturing planning onward — a key differentiator surfaced across every engagement.
+              </p>
+              <p style="margin-top:16px">
+                Languages supported: English, Kannada, and Hindi. Main products: moulding tools, press tools, die-casting support, gauges, jigs, fixtures, job work, and alloys work.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           SECTION 3 — MACHINE SHOP
+      ════════════════════════════════ -->
+      <section class="section">
+        <div class="services-shell">
+
+          <!-- Section image -->
+          <div class="section-img-wrap reveal">
+            <img src="img/machine-shop.jpg"
+                 alt="Precision VMC and EDM machines at Anjanadri Precision"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="section-img-placeholder" style="display:none">
+              <i class="fas fa-image"></i>
+              <span>Add your image: img/machine-shop.jpg</span>
+            </div>
+          </div>
+
+          <div class="section-head reveal">
+            <p>Machine Shop</p>
+            <h2>Precision machining and toolroom services we undertake</h2>
             <p>
-              From small-batch runs to bulk orders, we ensure consistency and
-              reliability.
+              VMC machining, EDM wire cutting, spark erosion, surface grinding, cylindrical grinding, laser engraving, and CMM inspection — all clearly represented here.
             </p>
           </div>
 
-          <div class="service-box">
-            <i class="fas fa-tools fa-2x"></i>
-            <h4>Tool & Die Making</h4>
+          <div class="machine-grid">
+            <article class="machine-card reveal-left">
+              <h3>Machining and finishing support</h3>
+              <p>Precision VMC machined products for electronic, automotive, aerospace, and other applications in brass, aluminium, and stainless steel.</p>
+              <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+                <li><strong>VMC machining:</strong> precision part and tool component machining.</li>
+                <li><strong>Wire EDM cutting:</strong> fine-profile cutting for high-precision components.</li>
+                <li><strong>Spark erosion:</strong> EDM support for cavities and complex tool shapes.</li>
+                <li><strong>Grinding support:</strong> surface and cylindrical grinding for close-tolerance finishing.</li>
+              </ul>
+            </article>
+            <article class="machine-card reveal-right">
+              <h3>Shop-floor support infrastructure</h3>
+              <p>A practical setup for both tooling manufacture and outsourced job work execution.</p>
+              <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+                <li><strong>VMC units:</strong> 3 Yantrang machines for machining capacity.</li>
+                <li><strong>Power press:</strong> 100-ton Singhal pneumatic press for punching and forming.</li>
+                <li><strong>Toolroom machines:</strong> Oskar sparking, HMT surface grinding, Milltech DRO milling, Oerlikon jig boring, shaping, and H boring.</li>
+                <li><strong>Utilities:</strong> Atlas Copco air compressors and bridge crane for safe material handling.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════
+           SECTION 4 — WHY ANJANADRI
+      ════════════════════════════════ -->
+      <section class="section">
+        <div class="services-shell">
+
+          <!-- Section image -->
+          <div class="section-img-wrap reveal">
+            <img src="img/why-anjanadri.jpg"
+                 alt="Team at Anjanadri Precision"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="section-img-placeholder" style="display:none">
+              <i class="fas fa-image"></i>
+              <span>Add your image: img/why-anjanadri.jpg</span>
+            </div>
+          </div>
+
+          <div class="section-head reveal">
+            <p>Why Anjanadri</p>
+            <h2>What makes the service model valuable to customers</h2>
             <p>
-              Custom dies, moulds, and tooling solutions engineered for
-              durability and precision.
+              End-to-end involvement from development stage to mass production — translated into a clear decision-making section.
             </p>
           </div>
 
-          <div class="service-box">
-            <i class="fas fa-check-circle fa-2x"></i>
-            <h4>Quality Inspection</h4>
-            <p>
-              Stringent quality checks with advanced measuring instruments to
-              ensure accuracy.
-            </p>
-          </div>
-
-          <div class="service-box">
-            <i class="fas fa-headset fa-2x"></i>
-            <h4>After-Sales Support</h4>
-            <p>
-              Maintenance, modifications, and lifetime technical support for all
-              delivered tools.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="features-section" id="feature">
-      <p class="section-label">Features</p>
-      <h2 class="section-title">
-        Stepping <span>Together</span> Towards the Success of
-        <span>Your Project</span>
-      </h2>
-
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-network-wired"></i>
-          </div>
-          <h3>Cloud-Integrated VMC</h3>
-          <p>
-            Monitor live production, tooling status, and machine health remotely
-            with our secure digital platform.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-layer-group"></i>
-          </div>
-          <h3>Multi-Axis Machining</h3>
-          <p>
-            Complex parts are manufactured with 3, 4, and 5-axis precision to
-            meet advanced industry needs.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>High Durability</h3>
-          <p>
-            Engineered with robust materials and processes to ensure longevity
-            and reliability in production.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="features-section">
-      <div class="features-header">
-        <div class="feature-heading">
-          <div><h2>Features that our VMC company provides for you</h2></div>
-          <div>
-            <p>
-              We always ensure precision, efficiency, and client satisfaction in
-              every CNC machining project.
-            </p>
+          <div class="why-grid stagger">
+            <article class="why-box">
+              <i class="fas fa-diagram-project"></i>
+              <h3>End-to-end involvement</h3>
+              <p>From development stage to supply of finished product delivery and continuation of mass production.</p>
+            </article>
+            <article class="why-box">
+              <i class="fas fa-users-gear"></i>
+              <h3>Development support</h3>
+              <p>Separate development focus to understand customer requirements and build practical manufacturing solutions.</p>
+            </article>
+            <article class="why-box">
+              <i class="fas fa-microchip"></i>
+              <h3>Application range</h3>
+              <p>Automotive, electronic, aerospace, and allied engineering applications supported with precision-led processes.</p>
+            </article>
+            <article class="why-box">
+              <i class="fas fa-handshake-angle"></i>
+              <h3>Growth mindset</h3>
+              <p>Built for long-term customer relationships, supplier development, and research-driven collaboration.</p>
+            </article>
           </div>
         </div>
-      </div>
-      <div class="features-container">
-        <div class="feature-card">
-          <div class="icon"><i class="fas fa-bolt"></i></div>
-          <h3>Rapid Prototyping</h3>
-          <p>
-            High-quality parts are produced and delivered quickly using modern
-            CNC tools and automation.
-          </p>
-          <a href="precision.html">Read more</a>
-        </div>
-        <div class="feature-card">
-          <div class="icon"><i class="fas fa-cogs"></i></div>
-          <h3>Precision Engineering</h3>
-          <p>
-            Each component is machined to exact tolerances to meet the strictest
-            industry standards.
-          </p>
-          <a href="precision.html">Read more</a>
-        </div>
-        <div class="feature-card">
-          <div class="icon"><i class="fas fa-industry"></i></div>
-          <h3>Advanced Automation</h3>
-          <p>
-            AI-driven automation ensures consistent performance in large-scale
-            production.
-          </p>
-          <a href="Project.html">Read more</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="features-section">
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
-          <h3>Precision Machining</h3>
-          <p>
-            Maintain exact tolerances across all CNC parts, ensuring unmatched
-            accuracy for critical components.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-handshake"></i></div>
-          <h3>Easy Collaboration</h3>
-          <p>
-            Seamlessly work with clients, engineers, and designers to refine
-            product details and specifications.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-screwdriver-wrench"></i>
+      <!-- ════════════════════════════════
+           CTA
+      ════════════════════════════════ -->
+      <section class="service-cta">
+        <div class="services-shell">
+          <div class="cta-box reveal-scale">
+            <div>
+              <h2>Need tooling, job work, or machine shop support?</h2>
+              <p>
+                Share your drawing, part requirement, or development challenge with us. We support moulding tools, press tools, gauges, jigs, fixtures, die-casting-related work, and precision machining from our Bengaluru facility.
+              </p>
+            </div>
+            <a href="https://wa.me/916360368459?text=Hi%20Anjanadri%20Precision!%20I%20would%20like%20to%20discuss%20a%20tooling%20or%20machining%20requirement." class="btn-yellow">Talk to Us</a>
           </div>
-          <h3>Flexible Fabrication</h3>
-          <p>
-            Customize machining tasks with multiple material options, tooling
-            setups, and prototype revisions.
-          </p>
         </div>
-
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
-          <h3>Scheduling Integration</h3>
-          <p>
-            Keep production on track by syncing project timelines with internal
-            planning.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-bell"></i></div>
-          <h3>Smart Alerts</h3>
-          <p>
-            Get instant notifications on production cycles, readiness of parts,
-            and inspection results.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
-          <h3>Project Reports</h3>
-          <p>
-            Access detailed production reports and quality insights to drive
-            better decision-making.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="footer-container">
-        <!-- Left Column -->
         <div class="footer-brand">
-          <img
-            src="img/logo/Screenshot 2025-09-24 103609.png"
-            alt="Genius Tech Logo"
-            class="logo"
-          />
-          <p>
-            Genius Technology specializes in high-precision VMC milling, and
-            press tool and Mold solutions. Delivering innovation, accuracy, and
-            reliability for global manufacturing industries.
-          </p>
+          <img src="img/logo/anjanadri_logo_png.png" alt="Anjanadri Precision logo" class="footer-logo" />
+          <p>ANJANADRI PRECISION specializes in moulding tools, press tools, gauges, jigs, fixtures, die-casting support, and precision machine shop services for automotive and industrial manufacturing.</p>
         </div>
-
-        <!-- Quick Menu -->
         <div class="footer-links">
           <h4>Quick Menu</h4>
           <ul>
-            <li><a href="services.html">Vmc & Wirecut Molding</a></li>
-            <li><a href="precision.html">Press & Moldtools Making </a></li>
-            <li><a href="precision.html">Tool Room Activities</a></li>
-            <li><a href="index.html">About Us</a></li>
+            <li><a href="services.html">Moulding Tools</a></li>
+            <li><a href="services.html">Press Tools</a></li>
+            <li><a href="services.html">Jigs &amp; Fixtures</a></li>
+            <li><a href="precision.html">Machine Shop</a></li>
             <li><a href="contact.html">Get a Quote</a></li>
           </ul>
         </div>
-
-        <!-- Support -->
         <div class="footer-links">
           <h4>Support</h4>
           <ul>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="contact.html">FAQs</a></li>
+            <li><a href="contact.html">Development Support</a></li>
             <li><a href="contact.html">Quality Policy</a></li>
             <li><a href="contact.html">Certifications</a></li>
           </ul>
         </div>
-
-        <!-- Social -->
         <div class="footer-social">
-          <h4>Follow Us</h4>
+          <h4>Connect</h4>
           <div class="social-icons">
-            <a
-              href="https://in.linkedin.com/in/abdul-lashkari-8798a7129?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
-              title="LinkedIn target="
-              _blank
-              rel="noopener"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/share/1JmvB4UV7W/"
-              title="Facebook  target="
-              _blank
-              rel="noopener    "
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/genius.technology_?igsh=MTd4c3Y5YzJkZmF1Mg=="
-              title="Instagram target="
-              _blank
-              rel="noopener"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details? target="
-              _blank
-              rel="noopener"
-              title="WhatsApp"
-              ><i class="fab fa-whatsapp"></i
-            ></a>
+            <a href="tel:+916360368459" title="Phone"><i class="fas fa-phone-alt"></i></a>
+            <a href="mailto:anjanadriprecision@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://maps.app.goo.gl/H3Q5AQWEB5JA9V688" title="Location" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="https://wa.me/916360368459?text=Hi%20Anjanadri%20Precision!%20I%20am%20interested%20in%20your%20services." title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
         <div class="footer-contact">
-         <p>
-            <a
-              href="https://www.google.com/maps/place/genius+technologies/@13.0064202,77.4947271,808m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae3d001422d6f5:0x357eb3ad3a09bf37!8m2!3d13.006415!4d77.497302!16s%2Fg%2F11y013t21p?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener"
-            >
+          <p>
+            <a href="https://maps.app.goo.gl/H3Q5AQWEB5JA9V688" target="_blank" rel="noopener">
               <i class="fas fa-map-marker-alt"></i>
-               Genius-technology 195, Andrahalli Main Rd, Peenya 2nd Stage, Shushruti Nagar, Bengaluru, Karnataka 560091
-            </a>
-          </p>
-          <p>
-            <a href="tel:+81236 38613">
-              <i class="fas fa-phone-alt"></i> +91 +91 81236 38613
+              Khatha no 57, Assessment 113/1, Site no 4, Doddanna Industrial Estate, Laggere Village, Vishwaneedam, Bengaluru, Karnataka 560091
             </a>
           </p>
-          <p>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@genius-technology.co.in&su=Product%20Enquiry%20from%20Website&body=Hello%20Genius%20Tech%2C%0A%0AI%20am%20interested%20in%20your%20products.%20Please%20share%20more%20details%20with%20me.%0A%0ARegards%2C%0A[Your%20Name] "
-              rel="noopener"
-              target="_blank"
-            >
-              <i class="fas fa-envelope"></i> admin@genius-technology.co.in
-            </a>
-          </p>
+          <p><a href="tel:+916360368459"><i class="fas fa-phone-alt"></i> +91 6360368459 / 8861394198</a></p>
+          <p><a href="mailto:anjanadriprecision@gmail.com" target="_blank" rel="noopener"><i class="fas fa-envelope"></i> anjanadriprecision@gmail.com</a></p>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>© Copyright 2025. Genius Tech CNC. All rights reserved.</p>
+        <p>© Copyright 2025. ANJANADRI PRECISION. All rights reserved. | ISO 9001:2015 Certified</p>
       </div>
     </footer>
-  </body>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Service Hero h2 animation
-      const serviceHeroH2 = document.querySelector(".service-hero-content h2");
-      if (serviceHeroH2) {
-        // Split text into spans if not already done
-        if (!serviceHeroH2.querySelector("span.letter")) {
-          const html = serviceHeroH2.innerHTML;
-          // Split by <br> and animate each line
-          serviceHeroH2.innerHTML = "";
-          html.split("<br>").forEach((line, lineIdx) => {
-            if (lineIdx > 0)
-              serviceHeroH2.appendChild(document.createElement("br"));
-            line
-              .replace(/<[^>]+>/g, "")
-              .split("")
-              .forEach((char, i) => {
-                const span = document.createElement("span");
-                span.className = "letter";
-                span.textContent = char === " " ? "\u00A0" : char;
-                serviceHeroH2.appendChild(span);
-              });
+    <script>
+      /* ── mobile nav ── */
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.querySelector(".menu-toggle");
+        const nav    = document.querySelector(".nav-links");
+        if (toggle && nav) toggle.addEventListener("click", () => nav.classList.toggle("active"));
+
+        /* ── Intersection Observer for scroll reveals ── */
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              io.unobserve(e.target);
+            }
           });
-        }
-        serviceHeroH2.querySelectorAll("span.letter").forEach((span) => {
-          span.style.opacity = 0;
-          span.style.transform = "translateY(-30px)";
-          span.style.animation = "none";
-        });
-        const observerH2 = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              serviceHeroH2
-                .querySelectorAll("span.letter")
-                .forEach((span, i) => {
-                  span.style.animation = "fadeInUp 0.6s ease-out forwards";
-                  span.style.animationDelay = i * 0.06 + "s";
-                });
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observerH2.observe(serviceHeroH2);
-      }
+        }, { threshold: 0.12 });
 
-      // Service Hero h1 animation
-      const serviceHeroH1 = document.querySelector(".service-hero-content h1");
-      if (serviceHeroH1) {
-        if (!serviceHeroH1.querySelector("span.letter")) {
-          const text = serviceHeroH1.textContent;
-          serviceHeroH1.innerHTML = "";
-          text.split("").forEach((char) => {
-            const span = document.createElement("span");
-            span.className = "letter";
-            span.textContent = char === " " ? "\u00A0" : char;
-            serviceHeroH1.appendChild(span);
+        document.querySelectorAll(
+          ".reveal, .stagger, .reveal-left, .reveal-right, .reveal-scale"
+        ).forEach(el => io.observe(el));
+
+        /* ── Count-up animation ── */
+        const countObserver = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            const el     = e.target;
+            const target = parseInt(el.dataset.target, 10);
+            const dur    = 1200;
+            const step   = 16;
+            const steps  = Math.round(dur / step);
+            let current  = 0;
+            const inc    = target / steps;
+            const timer  = setInterval(() => {
+              current += inc;
+              if (current >= target) { current = target; clearInterval(timer); }
+              el.textContent = Math.round(current);
+            }, step);
+            countObserver.unobserve(el);
           });
-        }
-        serviceHeroH1.querySelectorAll("span.letter").forEach((span) => {
-          span.style.opacity = 0;
-          span.style.transform = "translateY(-30px)";
-          span.style.animation = "none";
-        });
-        const observerH1 = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              serviceHeroH1
-                .querySelectorAll("span.letter")
-                .forEach((span, i) => {
-                  span.style.animation = "fadeInUp 0.6s ease-out forwards";
-                  span.style.animationDelay = i * 0.06 + "s";
-                });
-            }
-          },
-          { threshold: 0.5 }
-        );
-        observerH1.observe(serviceHeroH1);
-      }
-    });
+        }, { threshold: 0.5 });
 
-    // /
-    document.addEventListener("DOMContentLoaded", function () {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-      menuToggle.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const servicesSection = document.querySelector(".services");
-      if (!servicesSection) return;
-      servicesSection.style.opacity = 0;
-      servicesSection.style.transform = "translateY(32px)";
-      const observer = new IntersectionObserver(
-        function (entries) {
-          if (entries[0].isIntersecting) {
-            servicesSection.style.animation =
-              "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-            servicesSection.style.animationDelay = "0.2s";
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.3 }
-      );
-      observer.observe(servicesSection);
-    });
-
-    // Fade-up animation for feature section
-    document.addEventListener("DOMContentLoaded", function () {
-      document
-        .querySelectorAll(".features-section")
-        .forEach(function (featureSection) {
-          featureSection.style.opacity = 0;
-          featureSection.style.transform = "translateY(32px)";
-          const observer = new IntersectionObserver(
-            function (entries) {
-              if (entries[0].isIntersecting) {
-                featureSection.style.animation =
-                  "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-                featureSection.style.animationDelay = "0.2s";
-                observer.disconnect();
-              }
-            },
-            { threshold: 0.3 }
-          );
-          observer.observe(featureSection);
-        });
-    });
-  </script>
-
-
- <script>
-      (function () {
-        const slides = [
-          {
-            title: "<span>VMC</span> Solutions",
-            tagline:
-              "High-precision vertical machining for critical industrial needs.",
-            image: "img/19820.jpg",
-            badgeNx:
-              'GT–VMC 900<br><small>Advanced VMC Milling System</small><br><a href="#">View Specs</a>',
-            badgeSun: "PRECISION<br><small>±0.01 mm</small>",
-          },
-          {
-            title: "<span>WIRE</span> EDM",
-            tagline:
-              "Precision Wire EDM for complex parts and repeatable production.",
-            image: "img/27613.jpg",
-            badgeNx:
-              'Wire EDM 700<br><small>High-precision Milling</small><br><a href="#">View Specs</a>',
-            badgeSun: "PRECISION<br><small>±0.01 mm</small>",
-          },
-          {
-            title: "<span>Press</span> Tooling",
-            tagline:
-              "Tooling and press solutions for high-volume metal forming.",
-            image: "img/38196.jpg",
-            badgeNx:
-              'PRESS-TECH 500<br><small>Production Press Tooling</small><br><a href="#">View Specs</a>',
-            badgeSun: "DURABLE<br><small>High lifecycle</small>",
-          },
-        ];
-
-        const heroContent = document.querySelector(".hero-content");
-        if (!heroContent) return;
-
-        const titleEl = heroContent.querySelector(".hero-left h1");
-        const taglineEl = heroContent.querySelector(".tagline");
-        const heroImgEl = document.querySelector(".hero-image img");
-        const badgeNxEl = document.querySelector(".badge.nx");
-        const badgeSunEl = document.querySelector(".badge.sun");
-
-        let index = 0;
-        const ANIM_DURATION = 600; // ms (matches CSS)
-        const SLIDE_INTERVAL = 4000; // ms
-
-        function applySlide(i) {
-          // update elements (keep design identical)
-          if (titleEl) titleEl.innerHTML = slides[i].title;
-          if (taglineEl) taglineEl.textContent = slides[i].tagline;
-          if (heroImgEl) heroImgEl.src = slides[i].image;
-          if (badgeNxEl) badgeNxEl.innerHTML = slides[i].badgeNx;
-          if (badgeSunEl) badgeSunEl.innerHTML = slides[i].badgeSun;
-        }
-
-        // initialize first slide (keep existing look)
-        applySlide(0);
-
-        // start automatic rotation after initial delay so user sees first slide
-        setInterval(() => {
-          // animate out
-          heroContent.classList.remove("anim-in");
-          heroContent.classList.add("anim-out");
-
-          // after out animation finishes, swap content and animate in
-          setTimeout(() => {
-            index = (index + 1) % slides.length;
-            applySlide(index);
-
-            heroContent.classList.remove("anim-out");
-            // force reflow to restart transition
-            void heroContent.offsetWidth;
-            heroContent.classList.add("anim-in");
-            // remove anim-in class after animation completes
-            setTimeout(
-              () => heroContent.classList.remove("anim-in"),
-              ANIM_DURATION
-            );
-          }, ANIM_DURATION);
-        }, SLIDE_INTERVAL);
-      })();
-
-      // add 'nav-loaded' to body so desktop nav fade-in/stagger runs
-      document.addEventListener("DOMContentLoaded", function () {
-        // small delay for smoother effect
-        setTimeout(function () {
-          document.body.classList.add("nav-loaded");
-        }, 80);
-      });
-
-      // Fade-up animation for trusted section
-      document.addEventListener("DOMContentLoaded", function () {
-        const trustedSection = document.querySelector(".trusted");
-        if (!trustedSection) return;
-        trustedSection.style.opacity = 0;
-        trustedSection.style.transform = "translateY(32px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              trustedSection.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              trustedSection.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(trustedSection);
-      });
-
-      // Fade-up animation for hero2 section
-      document.addEventListener("DOMContentLoaded", function () {
-        const hero2Section = document.querySelector(".hero2");
-        if (!hero2Section) return;
-        hero2Section.style.opacity = 0;
-        hero2Section.style.transform = "translateY(32px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              hero2Section.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              hero2Section.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(hero2Section);
-      });
-
-      // Fade-up animation for expertise section
-      document.addEventListener("DOMContentLoaded", function () {
-        const expertiseSection = document.querySelector(".expertise");
-        if (!expertiseSection) return;
-        expertiseSection.style.opacity = 0;
-        expertiseSection.style.transform = "translateY(32px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              expertiseSection.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              expertiseSection.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(expertiseSection);
-      });
-
-      // Fade-up animation for cnc-awareness-section
-      document.addEventListener("DOMContentLoaded", function () {
-        const awarenessSection = document.querySelector(
-          ".cnc-awareness-section"
-        );
-        if (!awarenessSection) return;
-        awarenessSection.style.opacity = 0;
-        awarenessSection.style.transform = "translateY(32px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              awarenessSection.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              awarenessSection.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(awarenessSection);
-      });
-
-      // Fade-up animation for cnc-services-section
-      document.addEventListener("DOMContentLoaded", function () {
-        const cncServicesSection = document.querySelector(
-          ".cnc-services-section"
-        );
-        if (!cncServicesSection) return;
-        cncServicesSection.style.opacity = 0;
-        cncServicesSection.style.transform = "translateY(32px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              cncServicesSection.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              cncServicesSection.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(cncServicesSection);
+        document.querySelectorAll(".count-up").forEach(el => countObserver.observe(el));
       });
     </script>
+  </body>
 </html>
