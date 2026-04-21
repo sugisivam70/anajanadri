@@ -13,7 +13,6 @@
 
     <style>
       /* ── base reset ── */
-      .menu-toggle { display: none; }
       .services-page { background: linear-gradient(180deg, #f8fbff 0%, #fff 45%, #f5f8fc 100%); }
       .services-shell, .footer-container, .footer-bottom { max-width: 1220px; margin: 0 auto; }
 
@@ -214,14 +213,16 @@
       }
       .cta-box h2 { margin: 0 0 10px; font-size: clamp(1.8rem,3vw,2.5rem); }
       .cta-box p  { margin: 0; max-width: 720px; color: rgba(255,255,255,.84); line-height: 1.8; }
-      .btn-yellow {
+      .hero-actions .btn-yellow,
+      .cta-box .btn-yellow {
         display: inline-flex; align-items: center; justify-content: center;
         padding: 13px 26px; border-radius: 999px; background: #ffca38;
         color: #0a1730; font-weight: 700; text-decoration: none;
         white-space: nowrap;
         transition: background .2s, transform .2s, box-shadow .2s;
       }
-      .btn-yellow:hover { background: #ffd55f; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,202,56,.4); }
+      .hero-actions .btn-yellow:hover,
+      .cta-box .btn-yellow:hover { background: #ffd55f; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,202,56,.4); }
 
       /* ═══════════════════════════════════════════
          FOOTER
@@ -243,35 +244,13 @@
         .section-img-wrap { aspect-ratio: 16/5; }
       }
       @media (max-width: 768px) {
-        .menu-toggle {
-          display: block; background: none; border: none; font-size: 2rem;
-          color: #1a73e8; margin-left: 10px; cursor: pointer; z-index: 101;
-        }
-        .nav-links {
-          display: none; position: absolute; top: 70px; left: 0; width: 100%;
-          background: #fff; flex-direction: column; align-items: flex-start;
-          box-shadow: 0 12px 30px rgba(0,0,0,.08); z-index: 100; padding: 20px 0;
-        }
-        .nav-links.active { display: flex; }
-        .nav-links a {
-          width: 100%; padding: 16px 24px; border-bottom: 1px solid #eee;
-          font-size: 18px; color: #1a73e8; text-align: left;
-        }
-        .btn-yellow { margin: 10px 24px; width: calc(100% - 48px); text-align: center; }
-        .navbar { flex-wrap: wrap; padding: 16px 10px; position: relative; }
         .service-hero, .section, .service-cta { padding-left: 20px; padding-right: 20px; }
         .service-hero { padding-top: 126px; padding-bottom: 70px; }
         .service-grid, .why-grid, .stats { grid-template-columns: 1fr; }
         .hero-actions { flex-direction: column; }
-        .hero-actions .btn-yellow, .hero-actions .btn-outline { width: 100%; margin: 0; text-align: center; }
+        .hero-actions .btn-yellow, .hero-actions .btn-outline,
+        .cta-box .btn-yellow { width: 100%; margin: 0; text-align: center; }
         .section-img-wrap { aspect-ratio: 16/7; border-radius: 12px; }
-      }
-      @media (min-width: 769px) {
-        .nav-links {
-          display: flex !important; position: static; flex-direction: row; align-items: center;
-          background: none; box-shadow: none; padding: 0; width: auto;
-        }
-        .menu-toggle { display: none !important; }
       }
     </style>
   </head>
@@ -279,7 +258,7 @@
   <body class="services-page">
     <header class="navbar">
       <div class="logo">
-        <img src="img/logo/anjanadri_logo_png.png" alt="Anjanadri Precision logo" />
+        <img src="img/logo/anjanadri_logo_png.png" alt="" />
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -290,7 +269,11 @@
         <a href="precision.html">Precision</a>
         <a href="Project.html">Projects</a>
         <a href="contact.html">Contact</a>
-        <a href="https://wa.me/916360368459?text=Hi%20Anjanadri%20Precision!%20I%20am%20interested%20in%20your%20tooling%20and%20machining%20services.%20Please%20share%20more%20details." class="btn-yellow">Enquiry ➜</a>
+        <a
+          href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details?"
+          class="btn-yellow"
+          >Enquiry ➜</a
+        >
       </nav>
     </header>
 

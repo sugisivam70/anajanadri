@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Precision</title>
-    <link rel="icon" href="img/logo/Screenshot 2025-09-24 103228.png" />
-
-    <link rel="stylesheet" href="style.css" />
+    <title>ANJANADRI PRECISION | Precision</title>
+    <link rel="icon" href="img/logo/anjandri-logo-final.png" />
+    <link rel="stylesheet" href="style.css?v=20260210" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -19,541 +18,1490 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-  </head>
-  <style>
-    .service-hero-content h2 span.letter,
-    .service-hero-content h1 span.letter {
-      opacity: 0;
-      transform: translateY(-30px);
-      animation: fadeInUp 0.6s ease-out forwards;
-      display: inline-block;
-    }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
+    <style>
+      .precision-page {
+        background:
+          radial-gradient(circle at top left, rgba(0, 123, 255, 0.08), transparent 24%),
+          linear-gradient(180deg, #f5f9ff 0%, #ffffff 40%, #f2f6fb 100%);
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .precision-shell,
+      .footer-container,
+      .footer-bottom {
+        max-width: 1240px;
+        margin: 0 auto;
       }
-    }
 
-    .service-hero {
-      background-image: url(img/TaeApril20.jpg);
-      background-size: cover;
-      background-position: center;
-      padding: 100px 30px;
-      position: relative;
-      overflow: hidden;
-      color: #fff;
-      text-align: left;
-    }
-
-    .service-hero-content {
-      max-width: 700px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .service-hero-content h2 {
-      font-size: 36px;
-      font-weight: 300;
-      line-height: 1.4;
-    }
-
-    .service-hero-content h2 span {
-      font-weight: 700;
-      color: #00a2ff;
-    }
-
-    .bg-text {
-      font-size: 100px;
-      font-weight: 700;
-
-      margin: 0;
-      line-height: 1;
-      bottom: 30px;
-      left: 30px;
-      color: #021b5d;
-    }
-
-    /* Add this to your style block or style.css */
-
-    /* Fade-left animation for service-hero section */
-    @keyframes fadeLeft {
-      from {
+      .reveal,
+      .reveal-left,
+      .reveal-right,
+      .reveal-scale {
         opacity: 0;
+        transition:
+          opacity 0.72s cubic-bezier(0.22, 0.61, 0.36, 1),
+          transform 0.72s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+
+      .reveal {
+        transform: translateY(36px);
+      }
+
+      .reveal-left {
         transform: translateX(-40px);
       }
-      to {
-        opacity: 1;
-        transform: translateX(0);
+
+      .reveal-right {
+        transform: translateX(40px);
       }
-    }
 
-    .service-hero {
-      opacity: 0;
-      transform: translateX(-40px);
-      animation: none;
-    }
+      .reveal-scale {
+        transform: scale(0.96);
+      }
 
-    /* Fade-up animation for service section */
-    @keyframes fadeUp {
-      from {
+      .reveal.visible,
+      .reveal-left.visible,
+      .reveal-right.visible,
+      .reveal-scale.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      .stagger > * {
         opacity: 0;
-        transform: translateY(32px);
+        transform: translateY(28px);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
       }
-      to {
+
+      .stagger.visible > *:nth-child(1) {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
+        transition-delay: 0.05s;
       }
-    }
 
-    .services {
-      opacity: 0;
-      transform: translateY(32px);
-      animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
-      animation-delay: 1.8s;
-    }
-
-    /* Fade-up animation for service section */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(32px);
-      }
-      to {
+      .stagger.visible > *:nth-child(2) {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
+        transition-delay: 0.14s;
       }
-    }
 
-    .services {
-      opacity: 0;
-      transform: translateY(32px);
-      animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
-      animation-delay: 0.2s;
-    }
-  </style>
-  <body>
- <header class="navbar">
+      .stagger.visible > *:nth-child(3) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.23s;
+      }
+
+      .stagger.visible > *:nth-child(4) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.32s;
+      }
+
+      .stagger.visible > *:nth-child(5) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.41s;
+      }
+
+      .stagger.visible > *:nth-child(6) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.5s;
+      }
+
+      .stagger.visible > *:nth-child(7) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.59s;
+      }
+
+      .stagger.visible > *:nth-child(8) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.68s;
+      }
+
+      .precision-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 150px 40px 100px;
+        background:
+          linear-gradient(115deg, rgba(5, 18, 37, 0.92), rgba(5, 18, 37, 0.75)),
+          url("img/TaeApril20.jpg") center/cover no-repeat;
+        color: #ffffff;
+      }
+
+      .precision-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(135deg, rgba(127, 197, 255, 0.08), transparent 48%),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.03) 0,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 110px
+          );
+        pointer-events: none;
+      }
+
+      .precision-hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+        gap: 34px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .precision-hero h1 {
+        margin: 22px 0 18px;
+        font-size: clamp(2.5rem, 4.9vw, 5rem);
+        line-height: 1.04;
+      }
+
+      .precision-hero h1 span {
+        color: #86c9ff;
+      }
+
+      .precision-hero p {
+        margin: 0;
+        max-width: 720px;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s, border-color 0.2s;
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .hero-board {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+      }
+
+      .hero-stack {
+        display: grid;
+        gap: 16px;
+      }
+
+      .image-slot {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #dfe9f5, #cfdceb);
+        min-height: 220px;
+      }
+
+      .image-slot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+
+      .image-slot:hover img {
+        transform: scale(1.04);
+      }
+
+      .slot-overlay {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(8, 19, 34, 0.72);
+        color: #ffffff;
+      }
+
+      .slot-overlay strong {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.98rem;
+      }
+
+      .slot-overlay span {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .slot-placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #6d87a5;
+        background: linear-gradient(135deg, #e4edf8 0%, #d6e1ef 100%);
+        text-align: center;
+        padding: 18px;
+      }
+
+      .slot-placeholder i {
+        font-size: 2rem;
+        opacity: 0.5;
+      }
+
+      .slot-placeholder small {
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+      }
+
+      .tall-slot {
+        min-height: 458px;
+      }
+
+      .section {
+        padding: 82px 40px 0;
+      }
+
+      .section-head {
+        max-width: 770px;
+        margin-bottom: 32px;
+      }
+
+      .section-head p:first-child {
+        margin: 0 0 10px;
+        color: #0d6efd;
+        font-size: 0.82rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .section-head h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 3vw, 3rem);
+        color: #081326;
+      }
+
+      .section-head p:last-child {
+        margin: 0;
+        color: #5b6574;
+        line-height: 1.8;
+      }
+
+      .precision-grid,
+      .component-grid,
+      .materials-grid,
+      .gallery-grid,
+      .insight-grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      .component-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .precision-grid,
+      .materials-grid,
+      .insight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card-panel,
+      .component-card,
+      .material-card,
+      .insight-card,
+      .process-card {
+        background: #ffffff;
+        border-radius: 26px;
+        border: 1px solid rgba(15, 36, 64, 0.08);
+        box-shadow: 0 20px 45px rgba(10, 23, 48, 0.08);
+      }
+
+      .card-panel,
+      .material-card,
+      .insight-card,
+      .process-card {
+        padding: 28px;
+      }
+
+      .component-card {
+        overflow: hidden;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .component-card:hover,
+      .material-card:hover,
+      .insight-card:hover,
+      .process-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 28px 58px rgba(10, 23, 48, 0.14);
+      }
+
+      .component-card .component-copy {
+        padding: 22px;
+      }
+
+      .component-card h3,
+      .material-card h3,
+      .insight-card h3,
+      .process-card h3,
+      .card-panel h3 {
+        margin: 0 0 12px;
+        color: #081326;
+      }
+
+      .component-card p,
+      .material-card p,
+      .insight-card p,
+      .process-card p,
+      .card-panel p {
+        margin: 0;
+        color: #5b6574;
+        line-height: 1.76;
+      }
+
+      .component-meta {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .component-meta span {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: #f3f7fc;
+        color: #304056;
+        font-size: 0.92rem;
+      }
+
+      .blueprint-box {
+        background:
+          linear-gradient(135deg, rgba(8, 19, 38, 0.98), rgba(16, 86, 184, 0.9)),
+          url("img/19820.jpg") center/cover no-repeat;
+        color: #ffffff;
+      }
+
+      .blueprint-box h3,
+      .blueprint-box p {
+        color: #ffffff;
+      }
+
+      .blueprint-box p {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .precision-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .precision-list li {
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .precision-list strong {
+        color: #ffffff;
+      }
+
+      .metric-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .metric {
+        padding: 18px;
+        border-radius: 18px;
+        background: #f3f7fc;
+      }
+
+      .metric strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+        color: #081326;
+      }
+
+      .metric span {
+        color: #4e5f75;
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .image-ribbon {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .ribbon-slot {
+        min-height: 190px;
+      }
+
+      .process-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .process-column {
+        display: grid;
+        gap: 18px;
+      }
+
+      .process-card .step-tag {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #0d6efd;
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .gallery-grid .image-slot {
+        min-height: 240px;
+      }
+
+      .gallery-grid .image-slot:nth-child(2),
+      .gallery-grid .image-slot:nth-child(5),
+      .gallery-grid .image-slot:nth-child(8) {
+        min-height: 300px;
+      }
+
+      .section-note {
+        margin-top: 18px;
+        color: #68788d;
+        font-size: 0.95rem;
+        line-height: 1.75;
+      }
+
+      .service-cta {
+        padding: 82px 40px 80px;
+      }
+
+      .cta-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 36px;
+        border-radius: 30px;
+        background:
+          linear-gradient(135deg, rgba(8, 19, 38, 0.98), rgba(16, 86, 184, 0.9)),
+          url("img/27613.jpg") center/cover no-repeat;
+        color: #ffffff;
+      }
+
+      .cta-box h2 {
+        margin: 0 0 10px;
+        font-size: clamp(1.8rem, 3vw, 2.55rem);
+      }
+
+      .cta-box p {
+        margin: 0;
+        max-width: 720px;
+        color: rgba(255, 255, 255, 0.84);
+        line-height: 1.8;
+      }
+
+      .hero-actions .btn-yellow,
+      .cta-box .btn-yellow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 26px;
+        border-radius: 999px;
+        background: #ffca38;
+        color: #081326;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      }
+
+      .hero-actions .btn-yellow:hover,
+      .cta-box .btn-yellow:hover {
+        background: #ffd65f;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(255, 202, 56, 0.38);
+      }
+
+      .footer-brand .footer-logo {
+        width: min(100%, 300px);
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin-bottom: 16px;
+      }
+
+      @media (max-width: 1100px) {
+        .precision-hero-grid,
+        .process-layout,
+        .cta-box {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .component-grid,
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 900px) {
+        .precision-grid,
+        .materials-grid,
+        .insight-grid,
+        .metric-strip,
+        .image-ribbon {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-board {
+          grid-template-columns: 1fr;
+        }
+
+        .tall-slot {
+          min-height: 260px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .precision-hero,
+        .section,
+        .service-cta {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .precision-hero {
+          padding-top: 126px;
+          padding-bottom: 72px;
+        }
+
+        .component-grid,
+        .precision-grid,
+        .materials-grid,
+        .gallery-grid,
+        .insight-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .hero-actions .btn-yellow,
+        .hero-actions .btn-outline,
+        .cta-box .btn-yellow {
+          width: 100%;
+          margin: 0;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="precision-page">
+    <header class="navbar">
       <div class="logo">
-        <img src="img/logo/Screenshot 2025-09-24 103609.png" alt="" />
+        <img src="img/logo/anjanadri_logo_png.png" alt="" />
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="index.html">About</a>
         <a href="services.html">Services</a>
         <a href="precision.html">Precision</a>
         <a href="Project.html">Projects</a>
         <a href="contact.html">Contact</a>
-        <a href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details?" class="btn-yellow">Enquiry ➜</a>
+        <a
+          href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details?"
+          class="btn-yellow"
+          >Enquiry ➜</a
+        >
       </nav>
     </header>
 
-
-    <section class="service-hero" id="services">
-      <div class="service-hero-content">
-        <h2>We provide <br /><span>Best Quality</span></h2>
-        <h1 class="bg-text">Precision</h1>
-      </div>
-    </section>
-
-    <section class="services">
-      <h2>Custom CNC Manufacturing Solutions</h2>
-      <p>
-        From prototyping to large-scale production, Genius Tech delivers
-        end-to-end CNC machining and manufacturing services tailored to industry
-        needs.
-      </p>
-
-      <div class="cards">
-        <div class="card">
-          <img src="img/abt/CNC-Machine.jpg" alt="CNC Machining" />
-          <h3>CNC Milling</h3>
-          <p>
-            High-precision machining of complex components in metals and
-            engineering plastics with tight tolerances.
-          </p>
-          <a href="#">Learn More →</a>
-        </div>
-
-        <div class="card">
-          <img
-            src="img/abt/istockphoto-154368811-612x612.jpg"
-            alt="VMC Milling"
-          />
-          <h3>VMC Milling</h3>
-          <p>
-            Advanced Vertical Machining Centers for moulds, dies, tools, and
-            production-grade components.
-          </p>
-          <a href="#">Learn More →</a>
-        </div>
-
-        <div class="card">
-          <img
-            src="img/close-up-scene-progressive-die-operation-metal-work-processing-stamping-die-close-up-scene-progressive-die-operation-215348292.webp"
-            alt="Tool & Die Making"
-          />
-          <h3>Press Tool & Die Making</h3>
-          <p>
-            Custom tooling solutions including press tools, jigs, and fixtures
-            built with durability and accuracy.
-          </p>
-          <a href="#">Learn More →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="popular-details">
-      <div class="section-header">
-        <span class="tag">Manufacturing</span>
-        <h2>The Most Popular <span>Components</span> We Produce</h2>
-      </div>
-
-      <div class="details-grid">
-        <!-- Card 1 -->
-        <div class="detail-card">
-          <img
-            src="img/mild-steel-cast-iron-welding-silver-colour-size-customized-hardness-70-hrc-application-industrial-jig-fixture-947.jpg"
-            alt="Precision Fixture"
-          />
-          <h3>Precision Fixtures</h3>
-          <ul>
-            <li><strong>Material:</strong> Alloy Steel, Tool Steel</li>
-            <li><strong>Tolerance:</strong> ±0.01 mm</li>
-            <li><strong>Application:</strong> Workholding & Assembly</li>
-            <li><strong>Finish:</strong> Heat Treated / Ground</li>
-          </ul>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="detail-card">
-          <img src="img/Industrial-Mould-Bore-Plates.jpg" alt="Base Plate" />
-          <h3>Machine Base Plates</h3>
-          <ul>
-            <li><strong>Material:</strong> Cast Iron / Mild Steel</li>
-            <li><strong>Size Range:</strong> 200 mm – 2000 mm</li>
-            <li><strong>Surface Finish:</strong> Milled / Ground</li>
-            <li><strong>Mounting:</strong> Standard / Customized</li>
-          </ul>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="detail-card">
-          <img src="img/Picture1.png" alt="Tool Holder" />
-          <h3>Tool Holders</h3>
-          <ul>
-            <li><strong>Type:</strong> BT, CAT, HSK</li>
-            <li><strong>Material:</strong> Alloy Steel</li>
-            <li><strong>Clamping:</strong> Hydraulic / Mechanical</li>
-            <li><strong>Accuracy:</strong> 5 μm Runout</li>
-          </ul>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="detail-card">
-          <img src="img/Picture2.png" alt="Shaft Component" />
-          <h3>Custom Shafts</h3>
-          <ul>
-            <li><strong>Material:</strong> Stainless Steel, Alloy Steel</li>
-            <li><strong>Diameter:</strong> 10–150 mm</li>
-            <li><strong>Length:</strong> Up to 1200 mm</li>
-            <li><strong>Finish:</strong> Polished / Ground</li>
-          </ul>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="detail-card">
-          <img src="img/Picture5.png" alt="Bearing Housing" />
-          <h3>Bearing Housings</h3>
-          <ul>
-            <li><strong>Material:</strong> Cast Iron, Aluminum</li>
-            <li><strong>Size Range:</strong> 20–150 mm Bore</li>
-            <li><strong>Application:</strong> Industrial Machinery</li>
-            <li><strong>Finish:</strong> CNC Machined</li>
-          </ul>
-        </div>
-
-        <!-- Upload Card -->
-        <div class="upload-card">
-          <div class="upload-box">
-            <h3>Upload Your CAD / 3D Design</h3>
+    <main>
+      <section class="precision-hero">
+        <div class="precision-shell precision-hero-grid">
+          <div class="reveal-left">
+            <div class="eyebrow">
+              <i class="fas fa-crosshairs"></i>
+              Automotive Machine Parts & Tooling
+            </div>
+            <h1>
+              <span>ANJANADRI PRECISION</span> delivers moulding tools, press
+              tools, gauges, jigs, fixtures, and precision machine shop support
+            </h1>
             <p>
-              Supported Formats:<br />
-              STEP / IGES / STL / DXF / FBX
+              Based in Bengaluru, we manufacture automotive machine parts and
+              support customers with die-casting-related tooling, job work,
+              alloys work, VMC machining, EDM processes, and development
+              assistance from concept stage to finished-part delivery.
             </p>
-            <a href="#" class="btn-primary">Request a Quote</a>
+            <div class="hero-actions">
+              <a href="#component-gallery" class="btn-yellow">View Components</a>
+              <a href="contact.html" class="btn-outline">Get a Quote</a>
+            </div>
+          </div>
+
+          <div class="hero-board reveal-right">
+            <div class="image-slot tall-slot">
+              <img
+                src="img/19820.jpg"
+                alt="Anjanadri Precision machining and tooling"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Primary Precision Image</strong>
+                <small>Add your main tooling or component photo</small>
+              </div>
+              <div class="slot-overlay">
+                <strong>Precision Manufacturing</strong>
+                <span>Toolroom, machining, and component development</span>
+              </div>
+            </div>
+
+            <div class="hero-stack">
+              <div class="image-slot">
+                <img
+                  src="img/Picture1.png"
+                  alt="Finished component preview"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Finished Component</strong>
+                  <small>Add one production part image here</small>
+                </div>
+                <div class="slot-overlay">
+                  <strong>Component Detail</strong>
+                  <span>Machined, molded, or formed production parts</span>
+                </div>
+              </div>
+
+              <div class="image-slot">
+                <img
+                  src="img/Picture2.png"
+                  alt="Tooling detail preview"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Tooling Detail</strong>
+                  <small>Add a die, mold, jig, or fixture image</small>
+                </div>
+                <div class="slot-overlay">
+                  <strong>Tooling Focus</strong>
+                  <span>Press tools, gauges, jigs, and fixtures</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="section" id="component-gallery">
+        <div class="precision-shell">
+          <div class="section-head reveal">
+            <p>Component Gallery</p>
+            <h2>A cleaner layout for individual component families</h2>
+            <p>
+              Each card below has a dedicated image block plus quick technical
+              highlights, so you can upload many different component photos
+              later and still keep the page structured and easy to scan.
+            </p>
+          </div>
+
+          <div class="component-grid stagger">
+            <article class="component-card">
+              <div class="image-slot">
+                <img
+                  src="img/Picture5.png"
+                  alt="Precision fixture component"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Component 01</strong>
+                  <small>Add fixture or assembly part image</small>
+                </div>
+              </div>
+              <div class="component-copy">
+                <h3>Fixtures & Holding Tools</h3>
+                <p>
+                  Dedicated space for fixture, support block, and assembly
+                  holding images with short specs alongside.
+                </p>
+                <div class="component-meta">
+                  <span>Suggested text: tolerance, finish, application</span>
+                  <span>Best image type: front-angle product shot</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="image-slot">
+                <img
+                  src="img/Industrial-Mould-Bore-Plates.jpg"
+                  alt="Base plate component"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Component 02</strong>
+                  <small>Add plate or machined block image</small>
+                </div>
+              </div>
+              <div class="component-copy">
+                <h3>Base Plates & Machined Blocks</h3>
+                <p>
+                  Suitable for larger machined components where you want to show
+                  machining quality, flatness, and drilled features.
+                </p>
+                <div class="component-meta">
+                  <span>Suggested text: material, dimensions, mounting</span>
+                  <span>Best image type: top view or 3/4 industrial shot</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="image-slot">
+                <img
+                  src="img/close-up-scene-progressive-die-operation-metal-work-processing-stamping-die-close-up-scene-progressive-die-operation-215348292.webp"
+                  alt="Press tool component"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Component 03</strong>
+                  <small>Add die or press-tool image</small>
+                </div>
+              </div>
+              <div class="component-copy">
+                <h3>Press Tool Components</h3>
+                <p>
+                  A dedicated place for dies, punches, cavities, strip tooling,
+                  and stamped-part support visuals.
+                </p>
+                <div class="component-meta">
+                  <span>Suggested text: press tonnage, material, process</span>
+                  <span>Best image type: tooling close-up with detail</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="image-slot">
+                <img
+                  src="img/Picture1.png"
+                  alt="Tool holder component"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Component 04</strong>
+                  <small>Add shaft, holder, or cylindrical part</small>
+                </div>
+              </div>
+              <div class="component-copy">
+                <h3>Tool Holders & Rotating Parts</h3>
+                <p>
+                  Works well for holders, shafts, turned parts, and cylindrical
+                  precision elements with polished or ground finish.
+                </p>
+                <div class="component-meta">
+                  <span>Suggested text: runout, diameter range, finish</span>
+                  <span>Best image type: isolated product photo</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="image-slot">
+                <img
+                  src="img/Picture2.png"
+                  alt="Custom shaft component"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Component 05</strong>
+                  <small>Add shaft, pin, or custom turned item</small>
+                </div>
+              </div>
+              <div class="component-copy">
+                <h3>Custom Shafts & Pins</h3>
+                <p>
+                  Good for custom machined shafts, stepped pins, rollers, and
+                  motion-support elements used in assemblies.
+                </p>
+                <div class="component-meta">
+                  <span>Suggested text: diameter, length, finish</span>
+                  <span>Best image type: long-format close-up shot</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="component-card">
+              <div class="image-slot">
+                <img
+                  src="img/CNC-Machine.jpg"
+                  alt="Custom component placeholder"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Component 06</strong>
+                  <small>Add any future product image here</small>
+                </div>
+              </div>
+              <div class="component-copy">
+                <h3>Future Component Slot</h3>
+                <p>
+                  Kept intentionally flexible so you can add new components
+                  later without changing the card system.
+                </p>
+                <div class="component-meta">
+                  <span>Suggested text: custom family or new product name</span>
+                  <span>Best image type: any strong production image</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="precision-shell">
+          <div class="section-head reveal">
+            <p>Precision Strength</p>
+            <h2>Different design, same premium industrial feel</h2>
+            <p>
+              Instead of repeating the services page structure, this section
+              uses a blueprint-style information block beside modular precision
+              cards and a ribbon of image slots for more part photography.
+            </p>
+          </div>
+
+          <div class="precision-grid">
+            <article class="card-panel blueprint-box reveal-left">
+              <h3>Precision engineering story block</h3>
+              <p>
+                Use this highlighted panel for your strongest capability
+                statement: VMC machining, EDM support, tool development,
+                tolerance control, finishing quality, inspection discipline, or
+                customer-specific part execution.
+              </p>
+              <ul class="precision-list">
+                <li><strong>Good fit for:</strong> hero-level credibility text</li>
+                <li><strong>Useful details:</strong> accuracy, production type, sector</li>
+                <li><strong>Visual use:</strong> pairs well with close-up component photos</li>
+              </ul>
+            </article>
+
+            <div class="insight-grid reveal-right">
+              <article class="insight-card">
+                <h3>VMC & CNC Components</h3>
+                <p>
+                  Highlight high-accuracy milled parts, machined surfaces, and
+                  repeatable profiles with customer-specific geometry.
+                </p>
+              </article>
+              <article class="insight-card">
+                <h3>EDM & Tooling Details</h3>
+                <p>
+                  A focused space for intricate cavities, hard-material cutting,
+                  tooling corrections, and fine profile work.
+                </p>
+              </article>
+              <article class="insight-card">
+                <h3>Grinding & Final Finish</h3>
+                <p>
+                  Useful for telling the finish-quality story through surface
+                  texture, flatness, and tight fit visuals.
+                </p>
+              </article>
+              <article class="insight-card">
+                <h3>Inspection & Production Support</h3>
+                <p>
+                  Use for CMM, dimensional validation, and final readiness
+                  messaging before customer delivery.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="metric-strip stagger" style="margin-top: 22px">
+            <div class="metric">
+              <strong>Image-led</strong>
+              <span>Built to hold more part photos than the older precision page.</span>
+            </div>
+            <div class="metric">
+              <strong>Modular</strong>
+              <span>Every slot can be updated independently when you add new products.</span>
+            </div>
+            <div class="metric">
+              <strong>Consistent</strong>
+              <span>Same animation family and branding tone as `services.html`.</span>
+            </div>
+          </div>
+
+          <div class="image-ribbon stagger">
+            <div class="image-slot ribbon-slot">
+              <img
+                src="img/components/component-ribbon-01.jpg"
+                alt="Ribbon image slot 1"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Ribbon Slot 01</strong>
+                <small>Add a compact component close-up</small>
+              </div>
+            </div>
+            <div class="image-slot ribbon-slot">
+              <img
+                src="img/components/component-ribbon-02.jpg"
+                alt="Ribbon image slot 2"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Ribbon Slot 02</strong>
+                <small>Add another part or tooling image</small>
+              </div>
+            </div>
+            <div class="image-slot ribbon-slot">
+              <img
+                src="img/components/component-ribbon-03.jpg"
+                alt="Ribbon image slot 3"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Ribbon Slot 03</strong>
+                <small>Add a final detail image here</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="precision-shell">
+          <div class="section-head reveal">
+            <p>Materials & Tolerances</p>
+            <h2>Text blocks mixed with more image zones</h2>
+            <p>
+              This section gives you room for materials, tolerances, finish, or
+              application notes while still leaving visible places for component
+              photography.
+            </p>
+          </div>
+
+          <div class="materials-grid stagger">
+            <article class="material-card">
+              <h3>Materials you can feature</h3>
+              <p>
+                Use this card for aluminium, stainless steel, tool steel, alloy
+                steel, cast iron, brass, engineering plastics, or customer
+                supplied materials.
+              </p>
+            </article>
+            <article class="material-card">
+              <h3>Tolerance and finish notes</h3>
+              <p>
+                Use this space for flatness, runout, ground finish, polished
+                surfaces, heat treatment, plating, or assembly-critical fits.
+              </p>
+            </article>
+            <article class="material-card">
+              <h3>Applications</h3>
+              <p>
+                Mention automotive, electronics, industrial automation,
+                aerospace support, custom tooling, or development jobs.
+              </p>
+            </article>
+            <article class="material-card">
+              <h3>Custom jobs</h3>
+              <p>
+                Keep one flexible card for low-volume development parts,
+                repeated production jobs, or future component families.
+              </p>
+            </article>
+          </div>
+
+          <p class="section-note reveal">
+            The ribbon below is intentionally open-ended. It gives you three
+            more image positions without needing a new section later.
+          </p>
+
+          <div class="image-ribbon stagger">
+            <div class="image-slot ribbon-slot">
+              <img
+                src="img/components/material-slot-01.jpg"
+                alt="Material slot 1"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Material Slot 01</strong>
+                <small>Raw material, machined part, or finish sample</small>
+              </div>
+            </div>
+            <div class="image-slot ribbon-slot">
+              <img
+                src="img/components/material-slot-02.jpg"
+                alt="Material slot 2"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Material Slot 02</strong>
+                <small>Add process-stage or semi-finished part image</small>
+              </div>
+            </div>
+            <div class="image-slot ribbon-slot">
+              <img
+                src="img/components/material-slot-03.jpg"
+                alt="Material slot 3"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Material Slot 03</strong>
+                <small>Add another finished component image</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="precision-shell">
+          <div class="section-head reveal">
+            <p>Production Flow</p>
+            <h2>A process section with a gallery wall beside it</h2>
+            <p>
+              This keeps the content practical while still leaving a lot of
+              room for actual product imagery, process photos, and tooling
+              close-ups.
+            </p>
+          </div>
+
+          <div class="process-layout">
+            <div class="process-column reveal-left">
+              <article class="process-card">
+                <div class="step-tag">01</div>
+                <h3>Drawing review</h3>
+                <p>
+                  Use this for incoming drawing study, tolerance review, and
+                  manufacturability alignment before production starts.
+                </p>
+              </article>
+              <article class="process-card">
+                <div class="step-tag">02</div>
+                <h3>Machining & tooling</h3>
+                <p>
+                  Good for describing VMC, EDM, grinding, boring, shaping, or
+                  other machine-shop work involved in the part.
+                </p>
+              </article>
+              <article class="process-card">
+                <div class="step-tag">03</div>
+                <h3>Inspection & supply</h3>
+                <p>
+                  Use for final validation, packing, repeat-order readiness, and
+                  customer supply continuity.
+                </p>
+              </article>
+            </div>
+
+            <div class="gallery-grid stagger">
+              <div class="image-slot">
+                <img
+                  src="img/components/process-01.jpg"
+                  alt="Process slot 1"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Process Image 01</strong>
+                  <small>Add machine setup or tool image</small>
+                </div>
+              </div>
+              <div class="image-slot">
+                <img
+                  src="img/components/process-02.jpg"
+                  alt="Process slot 2"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Process Image 02</strong>
+                  <small>Add an in-process component photo</small>
+                </div>
+              </div>
+              <div class="image-slot">
+                <img
+                  src="img/components/process-03.jpg"
+                  alt="Process slot 3"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Process Image 03</strong>
+                  <small>Add inspection or finished-part shot</small>
+                </div>
+              </div>
+              <div class="image-slot">
+                <img
+                  src="img/components/process-04.jpg"
+                  alt="Process slot 4"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <div class="slot-placeholder" style="display: none">
+                  <i class="fas fa-image"></i>
+                  <strong>Process Image 04</strong>
+                  <small>Add another production close-up</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="image-bank">
+        <div class="precision-shell">
+          <div class="section-head reveal">
+            <p>Image Bank</p>
+            <h2>A large open section just for future component photos</h2>
+            <p>
+              You asked to leave plenty of image space. This last grid is
+              intentionally simple and reusable, so you can keep dropping in
+              new component pictures as the portfolio grows.
+            </p>
+          </div>
+
+          <div class="gallery-grid stagger">
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-01.jpg"
+                alt="Gallery slot 1"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 01</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-02.jpg"
+                alt="Gallery slot 2"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 02</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-03.jpg"
+                alt="Gallery slot 3"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 03</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-04.jpg"
+                alt="Gallery slot 4"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 04</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-05.jpg"
+                alt="Gallery slot 5"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 05</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-06.jpg"
+                alt="Gallery slot 6"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 06</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-07.jpg"
+                alt="Gallery slot 7"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 07</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+            <div class="image-slot">
+              <img
+                src="img/components/gallery-08.jpg"
+                alt="Gallery slot 8"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              />
+              <div class="slot-placeholder" style="display: none">
+                <i class="fas fa-image"></i>
+                <strong>Gallery 08</strong>
+                <small>Add component image here</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-cta">
+        <div class="precision-shell">
+          <div class="cta-box reveal-scale">
+            <div>
+              <h2>Ready to turn this into a full component portfolio?</h2>
+              <p>
+                You can now keep adding part photos across the hero, gallery
+                cards, ribbons, process wall, and image bank without changing
+                the design. This page is set up for that kind of growth.
+              </p>
+            </div>
+            <a
+              href="https://wa.me/916360368459?text=Hi%20Anjanadri%20Precision!%20I%20would%20like%20to%20discuss%20precision%20components%20or%20tooling%20requirements."
+              class="btn-yellow"
+              >Talk to Us</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="footer-container">
-        <!-- Left Column -->
         <div class="footer-brand">
           <img
-            src="img/logo/Screenshot 2025-09-24 103609.png"
-            alt="Genius Tech Logo"
-            class="logo"
+            src="img/logo/anjanadri_logo_png.png"
+            alt="Anjanadri Precision logo"
+            class="footer-logo"
           />
           <p>
-            Genius Technology specializes in high-precision VMC milling, and
-            press tool and Mold solutions. Delivering innovation, accuracy, and
-            reliability for global manufacturing industries.
+            ANJANADRI PRECISION specializes in moulding tools, press tools,
+            gauges, jigs, fixtures, die-casting support, and precision machine
+            shop services for automotive and industrial manufacturing.
           </p>
         </div>
 
-        <!-- Quick Menu -->
         <div class="footer-links">
           <h4>Quick Menu</h4>
           <ul>
-            <li><a href="services.html">Vmc & Wirecut Molding</a></li>
-            <li><a href="precision.html">Press & Moldtools Making </a></li>
-            <li><a href="precision.html">Tool Room Activities</a></li>
-            <li><a href="index.html">About Us</a></li>
+            <li><a href="services.html">Moulding Tools</a></li>
+            <li><a href="precision.html">Precision Components</a></li>
+            <li><a href="precision.html">Image Gallery</a></li>
+            <li><a href="Project.html">Projects</a></li>
             <li><a href="contact.html">Get a Quote</a></li>
           </ul>
         </div>
 
-        <!-- Support -->
         <div class="footer-links">
           <h4>Support</h4>
           <ul>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="contact.html">FAQs</a></li>
+            <li><a href="contact.html">Development Support</a></li>
             <li><a href="contact.html">Quality Policy</a></li>
             <li><a href="contact.html">Certifications</a></li>
           </ul>
         </div>
 
-        <!-- Social -->
         <div class="footer-social">
-          <h4>Follow Us</h4>
+          <h4>Connect</h4>
           <div class="social-icons">
+            <a href="tel:+916360368459" title="Phone"><i class="fas fa-phone-alt"></i></a>
+            <a href="mailto:anjanadriprecision@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
             <a
-              href="https://in.linkedin.com/in/abdul-lashkari-8798a7129?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
-              title="LinkedIn target="
-              _blank
+              href="https://maps.app.goo.gl/H3Q5AQWEB5JA9V688"
+              title="Location"
+              target="_blank"
               rel="noopener"
-              ><i class="fab fa-linkedin-in"></i
+              ><i class="fas fa-map-marker-alt"></i
             ></a>
             <a
-              href="https://www.facebook.com/share/1JmvB4UV7W/"
-              title="Facebook  target="
-              _blank
-              rel="noopener    "
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/genius.technology_?igsh=MTd4c3Y5YzJkZmF1Mg=="
-              title="Instagram target="
-              _blank
-              rel="noopener"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a
-              href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details? target="
-              _blank
-              rel="noopener"
+              href="https://wa.me/916360368459?text=Hi%20Anjanadri%20Precision!%20I%20am%20interested%20in%20your%20precision%20components."
               title="WhatsApp"
+              target="_blank"
+              rel="noopener"
               ><i class="fab fa-whatsapp"></i
             ></a>
           </div>
         </div>
+
         <div class="footer-contact">
-         <p>
+          <p>
             <a
-              href="https://www.google.com/maps/place/genius+technologies/@13.0064202,77.4947271,808m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae3d001422d6f5:0x357eb3ad3a09bf37!8m2!3d13.006415!4d77.497302!16s%2Fg%2F11y013t21p?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
+              href="https://maps.app.goo.gl/H3Q5AQWEB5JA9V688"
               target="_blank"
               rel="noopener"
             >
               <i class="fas fa-map-marker-alt"></i>
-              Genius-technology 195, Andrahalli Main Rd, Peenya 2nd Stage, Shushruti Nagar, Bengaluru, Karnataka 560091
+              Khatha no 57, Assessment 113/1, Site no 4, Doddanna Industrial
+              Estate, Laggere Village, Vishwaneedam, Bengaluru, Karnataka
+              560091
             </a>
-          </p>
+          </p>
           <p>
-            <a href="tel:+81236 38613">
-              <i class="fas fa-phone-alt"></i> +91 +91 81236 38613
+            <a href="tel:+916360368459">
+              <i class="fas fa-phone-alt"></i> +91 6360368459 / 8861394198
             </a>
           </p>
           <p>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=admin@genius-technology.co.in&su=Product%20Enquiry%20from%20Website&body=Hello%20Genius%20Tech%2C%0A%0AI%20am%20interested%20in%20your%20products.%20Please%20share%20more%20details%20with%20me.%0A%0ARegards%2C%0A[Your%20Name] "
-              rel="noopener"
+              href="mailto:anjanadriprecision@gmail.com"
               target="_blank"
+              rel="noopener"
             >
-              <i class="fas fa-envelope"></i> admin@genius-technology.co.in
+              <i class="fas fa-envelope"></i> anjanadriprecision@gmail.com
             </a>
           </p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© Copyright 2025. Genius Tech CNC. All rights reserved.</p>
+        <p>
+          © Copyright 2025. ANJANADRI PRECISION. All rights reserved. | ISO
+          9001:2015 Certified
+        </p>
       </div>
     </footer>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Service Hero h2 animation
-        const serviceHeroH2 = document.querySelector(
-          ".service-hero-content h2"
-        );
-        if (serviceHeroH2) {
-          // Split text into spans if not already done
-          if (!serviceHeroH2.querySelector("span.letter")) {
-            const html = serviceHeroH2.innerHTML;
-            // Split by <br> and animate each line
-            serviceHeroH2.innerHTML = "";
-            html.split("<br>").forEach((line, lineIdx) => {
-              if (lineIdx > 0)
-                serviceHeroH2.appendChild(document.createElement("br"));
-              line
-                .replace(/<[^>]+>/g, "")
-                .split("")
-                .forEach((char, i) => {
-                  const span = document.createElement("span");
-                  span.className = "letter";
-                  span.textContent = char === " " ? "\u00A0" : char;
-                  serviceHeroH2.appendChild(span);
-                });
-            });
-          }
-          serviceHeroH2.querySelectorAll("span.letter").forEach((span) => {
-            span.style.opacity = 0;
-            span.style.transform = "translateY(-30px)";
-            span.style.animation = "none";
-          });
-          const observerH2 = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting) {
-                serviceHeroH2
-                  .querySelectorAll("span.letter")
-                  .forEach((span, i) => {
-                    span.style.animation = "fadeInUp 0.6s ease-out forwards";
-                    span.style.animationDelay = i * 0.06 + "s";
-                  });
-              }
-            },
-            { threshold: 0.5 }
-          );
-          observerH2.observe(serviceHeroH2);
-        }
-
-        // Service Hero h1 animation
-        const serviceHeroH1 = document.querySelector(
-          ".service-hero-content h1"
-        );
-        if (serviceHeroH1) {
-          if (!serviceHeroH1.querySelector("span.letter")) {
-            const text = serviceHeroH1.textContent;
-            serviceHeroH1.innerHTML = "";
-            text.split("").forEach((char) => {
-              const span = document.createElement("span");
-              span.className = "letter";
-              span.textContent = char === " " ? "\u00A0" : char;
-              serviceHeroH1.appendChild(span);
-            });
-          }
-          serviceHeroH1.querySelectorAll("span.letter").forEach((span) => {
-            span.style.opacity = 0;
-            span.style.transform = "translateY(-30px)";
-            span.style.animation = "none";
-          });
-          const observerH1 = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting) {
-                serviceHeroH1
-                  .querySelectorAll("span.letter")
-                  .forEach((span, i) => {
-                    span.style.animation = "fadeInUp 0.6s ease-out forwards";
-                    span.style.animationDelay = i * 0.06 + "s";
-                  });
-              }
-            },
-            { threshold: 0.5 }
-          );
-          observerH1.observe(serviceHeroH1);
-        }
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.querySelector(".menu-toggle");
         const navLinks = document.querySelector(".nav-links");
-        menuToggle.addEventListener("click", function () {
-          navLinks.classList.toggle("active");
-        });
-      });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const servicesSection = document.querySelector(".services");
-        if (!servicesSection) return;
-        servicesSection.style.opacity = 0;
-        servicesSection.style.transform = "translateY(32px)";
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+
         const observer = new IntersectionObserver(
           function (entries) {
-            if (entries[0].isIntersecting) {
-              servicesSection.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              servicesSection.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
           },
-          { threshold: 0.3 }
+          { threshold: 0.12 }
         );
-        observer.observe(servicesSection);
-      });
 
-      // Fade-left animation for service-hero section
-      document.addEventListener("DOMContentLoaded", function () {
-        const serviceHero = document.querySelector(".service-hero");
-        if (!serviceHero) return;
-        serviceHero.style.opacity = 0;
-        serviceHero.style.transform = "translateX(-40px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              serviceHero.style.animation =
-                "fadeLeft 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              serviceHero.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(serviceHero);
-      });
-
-      // Fade-up animation for popular-details section
-      document.addEventListener("DOMContentLoaded", function () {
-        const popularDetails = document.querySelector(".popular-details");
-        if (!popularDetails) return;
-        popularDetails.style.opacity = 0;
-        popularDetails.style.transform = "translateY(32px)";
-        const observer = new IntersectionObserver(
-          function (entries) {
-            if (entries[0].isIntersecting) {
-              popularDetails.style.animation =
-                "fadeUp 0.8s cubic-bezier(.2,.9,.2,1) forwards";
-              popularDetails.style.animationDelay = "0.2s";
-              observer.disconnect();
-            }
-          },
-          { threshold: 0.3 }
-        );
-        observer.observe(popularDetails);
+        document
+          .querySelectorAll(
+            ".reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger"
+          )
+          .forEach(function (element) {
+            observer.observe(element);
+          });
       });
     </script>
   </body>
