@@ -26,7 +26,225 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <style>
+      /* Add this CSS to your existing styles */
+      .badge a {
+        display: inline-block;
+        
+        
+      
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      .badge a:hover {
+        background-color: #0056b3;
+      }
+
+      .service-hero {
+        background-image: url(img/10506876.jpg);
+        background-size: cover;
+
+        object-fit: contain;
+        background-position: center;
+        padding: 100px 30px;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        text-align: left;
+      }
+
+      .service-hero-content {
+        max-width: 700px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-hero-content h2 {
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+
+      .service-hero-content h2 span {
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .bg-text {
+        font-size: 100px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+        bottom: 30px;
+        left: 30px;
+        color: #0f67f4;
+      }
+
+      /* Hero Section */
+      .hero {
+       
+        font-family: "poppins", sans-serif;
+      }
+
+     
+
+      .hero .highlight {
+        color: #1e73e8;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      
+        margin-bottom: 25px;
+      }
+
+      /* CNC Hero Section */
+      .cnc-hero {
+        text-align: center;
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: auto;
+        font-family: "poppins", sans-serif;
+      }
+
+      .cnc-hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .cnc-hero .highlight {
+        color: #1e73e8;
+      }
+
+      .cnc-hero p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 25px;
+      }
+
+      /* Buttons */
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn.primary {
+        background: #1e73e8;
+        color: #fff;
+      }
+
+      .btn.primary:hover {
+        background: #125bb5;
+      }
+
+      .btn.secondary {
+        background: #f4f4f4;
+        color: #333;
+        border: 1px solid #ddd;
+      }
+
+      .btn.secondary:hover {
+        background: #e6e6e6;
+      }
+
+      /* Rating */
+      .rating {
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #333;
+      }
+
+      .rating p {
+        font-size: 0.85rem;
+        color: #555;
+      }
+
+      .rating a {
+        color: #1e73e8;
+        text-decoration: none;
+      }
+
+      /* Stats Section */
+      .hero-stats {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        font-family: "poppins", sans-serif;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+
+      .stat {
+        background: #f9f9f9;
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .stat h2 {
+        font-size: 2rem;
+        color: #111;
+        margin-bottom: 10px;
+      }
+
+      .stat p {
+        font-size: 0.95rem;
+        color: #000000;
+      }
+
+      /* Color Variations */
+      .stat.blue {
+        background: #000000;
+        color: #ffffff;
+        font-size: 2rem;
+      }
+      .stat.blue p {
+        color: #d4d4d4;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .stat.blue h2 {
+        color: #1f61f0;
+        font-size: 2rem;
+      }
+
+      .stat.green {
+        background: #f0fdf4;
+        color: #111;
+        border: 1px solid #cce8d8;
+      }
+
+      .stat.lightgreen {
+        background: #d9f99d;
+        color: #111;
+      }
+    </style>
   </head>
+
   <body>
     <!-- Navbar -->
     <header class="navbar">
@@ -226,6 +444,54 @@
 
       <!-- Add this HTML where you want the video to appear (around line 215 in index.html) -->
     </section>
+    <section class="cnc-hero">
+      <div class="hero-content">
+        <h1>
+          The Future of CNC Manufacturing with <br />
+          <span class="highlight">Cutting-Edge Technology</span>
+        </h1>
+        <p>
+          Genius Tech delivers precision, reliability, and efficiency —
+          empowering industries with world-class VMC machining solutions.
+        </p>
+
+        <div class="buttons">
+          <a href="#services" class="btn primary">Get Started</a>
+          <a href="#contact" class="btn secondary">Request a Quote</a>
+        </div>
+
+        <div class="rating">
+          ⭐⭐⭐⭐⭐ <span>5.0</span>
+          <p>Trusted by 100+ <a href="#clients">manufacturers worldwide</a></p>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <img src="img/13190.jpg" alt="CNC Projects" />
+        </div>
+        <div class="stat blue">
+          <h2>100+</h2>
+          <p>Esteemed Clients & Partners</p>
+        </div>
+        <div class="stat green">
+          <h2>1950+</h2>
+          <p>
+            Total VMC Projects <br /><small>Growth of 120+ this year</small>
+          </p>
+        </div>
+        <div class="stat lightgreen">
+          <h2>6+</h2>
+          <p>Years of Dedicated WIRECUT Molding & VMC Excellence</p>
+        </div>
+        <div class="stat blue">
+          <p>
+            Achieve Precision Engineering <br />
+            and Boost Productivity with Genius Tech.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Trusted Clients -->
     <section class="trusted">
@@ -234,44 +500,70 @@
         <div class="logos-track">
           <!-- Repeat logos twice for seamless loop -->
           <img
-            src="img/slie logo/sky-logo-tvs-motor-company-symbol-television-himachal-pradesh-motorcycle-blue-png-clipart.jpg"
+            src="https://upload.wikimedia.org/wikipedia/ta/7/79/TVS_Motor_Company_Logo.png"
             alt="Client 1"
           />
           <img src="img/slie logo/download (1).png" alt="Client 2" />
-          <img src="img/slie logo/download (2).png" alt="Client 3" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtDVpE5esxNj-y2nHbdLwENZOJORi5y0Es2Q&s"
+            alt="Client 3"
+          />
           <img src="img/slie logo/download.png" alt="Client 4" />
           <img
             src="img/slie logo/tensator_instagram_logo_v1-1.png"
             alt="Client 5"
           />
           <img
-            src="img/slie logo/sky-logo-tvs-motor-company-symbol-television-himachal-pradesh-motorcycle-blue-png-clipart.jpg"
+            src="https://upload.wikimedia.org/wikipedia/ta/7/79/TVS_Motor_Company_Logo.png"
             alt="Client 1"
           />
           <img src="img/slie logo/download (1).png" alt="Client 2" />
-          <img src="img/slie logo/download (2).png" alt="Client 3" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtDVpE5esxNj-y2nHbdLwENZOJORi5y0Es2Q&s"
+            alt="Client 3"
+          />
           <img src="img/slie logo/download.png" alt="Client 4" />
           <img
             src="img/slie logo/tensator_instagram_logo_v1-1.png"
             alt="Client 5"
           />
           <img
-            src="img/slie logo/sky-logo-tvs-motor-company-symbol-television-himachal-pradesh-motorcycle-blue-png-clipart.jpg"
+            src="https://upload.wikimedia.org/wikipedia/ta/7/79/TVS_Motor_Company_Logo.png"
             alt="Client 1"
           />
           <img src="img/slie logo/download (1).png" alt="Client 2" />
-          <img src="img/slie logo/download (2).png" alt="Client 3" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtDVpE5esxNj-y2nHbdLwENZOJORi5y0Es2Q&s"
+            alt="Client 3"
+          />
           <img src="img/slie logo/download.png" alt="Client 4" />
           <img
             src="img/slie logo/tensator_instagram_logo_v1-1.png"
             alt="Client 5"
           />
           <img
-            src="img/slie logo/sky-logo-tvs-motor-company-symbol-television-himachal-pradesh-motorcycle-blue-png-clipart.jpg"
+            src="https://upload.wikimedia.org/wikipedia/ta/7/79/TVS_Motor_Company_Logo.png"
             alt="Client 1"
           />
           <img src="img/slie logo/download (1).png" alt="Client 2" />
-          <img src="img/slie logo/download (2).png" alt="Client 3" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtDVpE5esxNj-y2nHbdLwENZOJORi5y0Es2Q&s"
+            alt="Client 3"
+          />
+          <img src="img/slie logo/download.png" alt="Client 4" />
+          <img
+            src="img/slie logo/tensator_instagram_logo_v1-1.png"
+            alt="Client 5"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/ta/7/79/TVS_Motor_Company_Logo.png"
+            alt="Client 1"
+          />
+          <img src="img/slie logo/download (1).png" alt="Client 2" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtDVpE5esxNj-y2nHbdLwENZOJORi5y0Es2Q&s"
+            alt="Client 3"
+          />
           <img src="img/slie logo/download.png" alt="Client 4" />
           <img
             src="img/slie logo/tensator_instagram_logo_v1-1.png"
@@ -1076,6 +1368,52 @@
           observerH1.observe(heroH1);
         }
       });
+    </script>
+
+    <script>
+      // ...existing code...
+
+      // Count animation for hero-stats numbers
+      document.addEventListener("DOMContentLoaded", function () {
+        function animateCount(el, target, duration = 1200) {
+          let start = 0;
+          let startTime = null;
+          target = parseInt(target, 10);
+          function step(ts) {
+            if (!startTime) startTime = ts;
+            const progress = Math.min((ts - startTime) / duration, 1);
+            el.textContent = Math.floor(progress * (target - start) + start);
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              el.textContent = target;
+            }
+          }
+          requestAnimationFrame(step);
+        }
+
+        // Animate all .stat h2 numbers when .hero-stats enters viewport
+        const statsSection = document.querySelector(".hero-stats");
+        if (statsSection) {
+          const observer = new IntersectionObserver(
+            function (entries) {
+              if (entries[0].isIntersecting) {
+                statsSection
+                  .querySelectorAll(".stat h2")
+                  .forEach(function (h2) {
+                    const target = h2.textContent.replace(/\D/g, "");
+                    if (target) animateCount(h2, target);
+                  });
+                observer.disconnect();
+              }
+            },
+            { threshold: 0.3 },
+          );
+          observer.observe(statsSection);
+        }
+      });
+
+      // ...existing code...
     </script>
   </body>
 </html>
