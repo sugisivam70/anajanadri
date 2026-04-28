@@ -39,13 +39,17 @@
 
       .cnc-card {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         align-items: center;
         gap: 40px;
+        width: 100%;
       }
 
       .cnc-card.reverse {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+      .cnc-card > * {
+        min-width: 0;
       }
       .cnc-card.reverse .cnc-text {
         order: 2;
@@ -83,23 +87,50 @@
         border-color: #00aaff;
       }
 
+      .cnc-text,
+      .cnc-image {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .cnc-image {
+        display: flex;
+        justify-content: center;
+      }
+
       .cnc-image img {
         width: 100%;
-        max-width: 500px;
+        max-width: 100%;
+        height: auto;
         display: block;
         border-radius: 15px;
+        object-fit: contain;
       }
+
       @media (max-width: 768px) {
-        .cnc-card {
+        .cnc-card,
+        .cnc-card.reverse {
           grid-template-columns: 1fr;
           text-align: center;
+          width: 100%;
         }
         .cnc-card.reverse .cnc-text,
         .cnc-card.reverse .cnc-image {
-          order: initial;
+          order: initial !important;
+        }
+        .cnc-card > *,
+        .cnc-text,
+        .cnc-image {
+          width: 100%;
+          min-width: 0;
+        }
+        .cnc-image {
+          justify-content: center;
         }
         .cnc-image img {
+          width: 100%;
           max-width: 100%;
+          margin: 0 auto;
         }
       }
       .product-title {
@@ -306,11 +337,7 @@
         </div>
         <div class="footer-contact">
           <p>
-            <a
-              href=""
-              target="_blank"
-              rel="noopener"
-            >
+            <a href="" target="_blank" rel="noopener">
               <i class="fas fa-map-marker-alt"></i>
               Khatha no 57, Assessment 113/1, Site no 4 (Old Assessment 113),
               Doddanna Industrial Estate, Laggere Village, Vishwaneedam,
@@ -342,5 +369,6 @@
         </p>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
