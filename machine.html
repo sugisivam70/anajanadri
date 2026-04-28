@@ -1,168 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Our Machines - Anjanadri</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
- .navbar {
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-      background: linear-gradient( to right , #f8f9fc, #b8e1ff);
- 
-}
-    .cnc-section {
-      margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-  padding: 60px 10%;
-  background: linear-gradient( to right , #f8f9fc, #b8e1ff);
-  color: #000000;
-  font-family: "Poppins", sans-serif;
-}
+    <style>
+      .navbar {
+        background: linear-gradient(to right, #f8f9fc, #b8e1ff);
+      }
+      .cnc-section {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 60px 10%;
+        background: linear-gradient(to right, #f8f9fc, #b8e1ff);
+        color: #000000;
+        font-family: "Poppins", sans-serif;
+      }
 
-.cnc-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-}
+      .cnc-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+      }
 
-.cnc-card.reverse {
-  grid-template-columns: 1fr 1fr;
-}
-.cnc-card.reverse .cnc-text {
-  order: 2;
-}
-.cnc-card.reverse .cnc-image {
-  order: 1;
-}
+      .cnc-card.reverse {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cnc-card.reverse .cnc-text {
+        order: 2;
+      }
+      .cnc-card.reverse .cnc-image {
+        order: 1;
+      }
 
-.cnc-text h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: rgb(110, 110, 110);
-  font-family: "Poppins", sans-serif;
-}
-.cnc-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 25px;
-  font-family: "Poppins", sans-serif;
-  color: #333;
-}
+      .cnc-text h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: rgb(110, 110, 110);
+        font-family: "Poppins", sans-serif;
+      }
+      .cnc-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        font-family: "Poppins", sans-serif;
+        color: #333;
+      }
 
-.cnc-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 1px solid #61d4f7;
-  color: #272727;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-.cnc-btn:hover {
-  background: #00aaff;
- color: #fff;
-  border-color: #00aaff;
-}
+      .cnc-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border: 1px solid #61d4f7;
+        color: #272727;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+      .cnc-btn:hover {
+        background: #00aaff;
+        color: #fff;
+        border-color: #00aaff;
+      }
 
-.cnc-image img {
-  width: 100%;
-  max-width: 500px;
-  display: block;
-  border-radius: 15px;
-}
-@media (max-width: 768px) {
-  .cnc-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }       
-  .cnc-card.reverse .cnc-text,
-  .cnc-card.reverse .cnc-image {
-    order: initial;
-  } 
-  .cnc-image img {
-    max-width: 100%;
-  }
-}
-.product-title {
-  color: #1a90ff;
-  font-size: 3.4rem;
-  font-weight: 700;
-  margin: 1.5rem;
-}
-  </style>
-</head>
-<body>
-  <header class="navbar">
-      <div class="container">
-        <!-- ...existing code... -->
-        <div class="logo">
-          <img src="logo.png" alt="Genius" />
-        </div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="product.html">Product</a>
-          <a href="machine.html">Machines</a>
-          
-          <a href="work.html">Work</a>
-        </nav>
-        <!-- ...existing code... -->
-        <!-- ...existing code... -->
+      .cnc-image img {
+        width: 100%;
+        max-width: 500px;
+        display: block;
+        border-radius: 15px;
+      }
+      @media (max-width: 768px) {
+        .cnc-card {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .cnc-card.reverse .cnc-text,
+        .cnc-card.reverse .cnc-image {
+          order: initial;
+        }
+        .cnc-image img {
+          max-width: 100%;
+        }
+      }
+      .product-title {
+        color: #1a90ff;
+        font-size: 3.4rem;
+        font-weight: 700;
+        margin: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <img src="img/logo/anjanadri_logo_png.png" alt="" />
       </div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="precision.html">Precision</a>
+        <a href="machines.html">Machines</a>
+        <a href="contact.html">Contact</a>
+        <a
+          href="https://wa.me/918861394198?text=Hi%20Anjanadri%20Precision!%20I%20am%20interested%20in%20your%20precision%20machining%20and%20tooling%20services.%20Can%20you%20share%20more%20details?"
+          class="btn-yellow"
+        >
+          Enquiry ➜
+        </a>
+      </nav>
     </header>
 
-
-
     <section class="cnc-section">
-       <h2 class="product-title">Our Machine's</h2>
-  <!-- Card 1 -->
-  <div class="cnc-card">
-    <div class="cnc-text">
-      <h2>Professional Metalworking</h2>
-<p>We offer serial production of metal components using modern CNC machines.</p>
-       <a href="#" class="cnc-btn">Contact</a>
-    </div>
-    <div class="cnc-image">
-      <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="CNC Machine">
-    </div>
-  </div>
+      <h2 class="product-title">Our Machines</h2>
+      <div class="cnc-card reverse">
+        <div class="cnc-text">
+          <h2>Wire EDM Machine</h2>
+          <p>
+            High-precision Wire EDM machine used for intricate and complex
+            component shaping with high precision, ideal for dies, moulds, and
+            hardened materials.
+          </p>
+          <a href="#" class="cnc-btn">Contact</a>
+        </div>
+        <div class="cnc-image">
+          <img
+            src="https://www.mcmachinery.com/wp-content/uploads/2020/03/MV1200-S-Advance-Type-M800-Wire-EDM-1024x1024.png"
+            alt="Wire EDM Machine"
+          />
+        </div>
+      </div>
 
-  <!-- Card 2 -->
-  <div class="cnc-card reverse">
-    <div class="cnc-text">
-           <h2>Professional Metalworking</h2>
-<p>We offer serial production of metal components using modern CNC machines.</p>
-         <a href="#" class="cnc-btn">Contact</a>
-    </div>
-    <div class="cnc-image">
-      <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="CNC Processing">
-    </div>
-  </div>
+      <!-- Card 1 -->
+      <div class="cnc-card">
+        <div class="cnc-text">
+          <h2>DRO Milling Machine</h2>
+          <p>
+            High-precision DRO milling machine used for accurate machining,
+            slotting, drilling, and shaping of metal components with excellent
+            dimensional control and reliability.
+          </p>
+          <a href="#" class="cnc-btn">Contact</a>
+        </div>
+        <div class="cnc-image">
+          <img
+            src="https://5.imimg.com/data5/SELLER/Default/2023/9/339913413/KK/MT/KR/6883395/dro-milling-machine.jpg"
+            alt="DRO Milling Machine"
+          />
+        </div>
+      </div>
 
-  <!-- Card 3 -->
-  <div class="cnc-card">
-    <div class="cnc-text">
-           <h2>Professional Metalworking</h2>
-<p>We offer serial production of metal components using modern CNC machines.</p>
-        <a href="#" class="cnc-btn">Contact</a>
-    </div>
-    <div class="cnc-image">
-      <img src="img/artur-kechter-QAp7VQOmcLE-unsplash.jpg" alt="CNC Part">
-    </div>
-  </div>
-</section>
+      <!-- Card 2 -->
+      <div class="cnc-card reverse">
+        <div class="cnc-text">
+          <h2>Surface Grinding Machine</h2>
+          <p>
+            Surface grinding machine used to achieve high-precision flat
+            surfaces, tight tolerances, and superior surface finish for tooling
+            and engineering components.
+          </p>
+          <a href="#" class="cnc-btn">Contact</a>
+        </div>
+        <div class="cnc-image">
+          <img
+            src="https://cpimg.tistatic.com/08214796/b/6/extra-08214796.jpg"
+            alt="Surface Grinding Machine"
+          />
+        </div>
+      </div>
 
+      <!-- Card 3 -->
+      <div class="cnc-card">
+        <div class="cnc-text">
+          <h2>EDM / Spark Erosion Machine</h2>
+          <p>
+            Electrical Discharge Machining (EDM) used for intricate and complex
+            component shaping with high precision, ideal for dies, moulds, and
+            hardened materials.
+          </p>
+          <a href="#" class="cnc-btn">Contact</a>
+        </div>
+        <div class="cnc-image">
+          <img
+            src="https://www.raymechatronics.com/wp-content/uploads/2023/02/0d8f06_eb26dc5f7fb141ffbc3f0f822af80646.jpg"
+            alt="EDM Machine"
+          />
+        </div>
+      </div>
 
-    
-    
+      <div class="cnc-card reverse">
+        <div class="cnc-text">
+          <h2>Trimos Measuring System</h2>
+          <p>
+            High-precision Trimos measuring equipment used for dimensional
+            inspection, height measurement, and quality control. Ensures
+            accurate verification of components with micron-level precision for
+            engineering and tooling applications.
+          </p>
+          <a href="#" class="cnc-btn">Contact</a>
+        </div>
+        <div class="cnc-image">
+          <img
+            src="https://trimaster.in/website/wp-content/uploads/2024/09/6-1.png"
+            alt="Trimos Measuring System"
+          />
+        </div>
+      </div>
+    </section>
 
-    
-</body>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Column -->
+        <div class="footer-brand">
+          <img
+            src="img/logo/anjanadri_logo_png.png"
+            alt="Genius Tech Logo"
+            class="logo"
+          />
+          <p>
+            ANJANADRI PRECISION specializes in precision manufacturing of
+            tooling, automotive components, moulds, and fixtures. Delivering
+            innovation, accuracy, and reliability for automotive and industrial
+            manufacturing globally.
+          </p>
+        </div>
+
+        <!-- Quick Menu -->
+        <div class="footer-links">
+          <h4>Quick Menu</h4>
+          <ul>
+            <li><a href="services.html">Moulding Tools</a></li>
+            <li><a href="precision.html">Press Tools & Die-Casting</a></li>
+            <li><a href="precision.html">VMC & Wire EDM</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">FAQs</a></li>
+            <li><a href="contact.html">Quality Policy</a></li>
+            <li><a href="contact.html">Certifications</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a
+              href="https://in.linkedin.com/in/abdul-lashkari-8798a7129?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile"
+              title="LinkedIn target="
+              _blank
+              rel="noopener"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/share/1JmvB4UV7W/"
+              title="Facebook  target="
+              _blank
+              rel="noopener    "
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/genius.technology_?igsh=MTd4c3Y5YzJkZmF1Mg=="
+              title="Instagram target="
+              _blank
+              rel="noopener"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://wa.me/8123638613?text=Hi%20Genius%20Tech!%20I%20am%20interested%20in%20your%20VMC%20solutions. Can%20you%20provide%20more%20details? target="
+              _blank
+              rel="noopener"
+              title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <p>
+            <a
+              href="https://www.google.com/maps/place/genius+technologies/@13.0064202,77.4947271,808m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae3d001422d6f5:0x357eb3ad3a09bf37!8m2!3d13.006415!4d77.497302!16s%2Fg%2F11y013t21p?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+              Khatha no 57, Assessment 113/1, Site no 4 (Old Assessment 113),
+              Doddanna Industrial Estate, Laggere Village, Vishwaneedam,
+              Bengaluru, Karnataka 560091
+            </a>
+                      
+          </p>
+          <p>
+            <a href="tel:+916360368459">
+              <i class="fas fa-phone-alt"></i> +91 6360368459 / 8861394198
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:anjanadriprecision@gmail.com"
+              rel="noopener"
+              target="_blank"
+            >
+              <i class="fas fa-envelope"></i> anjanadriprecision@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © Copyright 2025. ANJANADRI PRECISION. All rights reserved. | ISO
+          9001:2015 Certified
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
